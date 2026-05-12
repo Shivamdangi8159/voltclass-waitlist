@@ -71,6 +71,10 @@
           posthog.capture('waitlist_signup', { exam, source: 'website' });
           posthog.identify(email);
         }
+      if (window.posthog) {
+      posthog.capture('waitlist_signup', { exam: exam, source: 'website' });
+        posthog.identify(email);
+        }
       } else {
         // Show actual error from server
         alert('Error: ' + (data.error || 'Something went wrong'));
