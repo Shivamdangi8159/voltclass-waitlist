@@ -41,55 +41,52 @@
     <div id="form-success" class="success">You're on the list. We'll email you when VoltClass is ready to charge your rank. ⚡</div>
     <p class="note">We’ll never spam. Only rank-boosting updates.</p>
   </div>
-<script>
-  const SUPABASE_FUNCTION_URL = "https://gnchqrwegnmjrkxphevb.supabase.co/functions/v1/waitlist-signup"; // paste the correct URL
 
-  document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const full_name = document.getElementById('name').value.trim();
-    const exam = document.getElementById('exam').value;
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const source = "website";
+  <!-- Waitlist form handler -->
+  <script>
+    const SUPABASE_FUNCTION_URL = "https://gnchqrwegnmjrkxphevb.supabase.co/functions/v1/waitlist-signup"; // ⚠️ REPLACE with your actual Edge Function URL
 
-    const payload = { full_name, email, exam, phone, source };
+    document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const full_name = document.getElementById('name').value.trim();
+      const exam = document.getElementById('exam').value;
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const source = "website";
 
-    try {
-      const res = await fetch(SUPABASE_FUNCTION_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+      const payload = { full_name, email, exam, phone, source };
 
-      const data = await res.json();
+      try {
+        const res = await fetch(SUPABASE_FUNCTION_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
 
-      if (res.ok) {
-        // Success
-        document.getElementById('waitlist-form').style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-        if (window.posthog) {
-          posthog.capture('waitlist_signup', { exam, source: 'website' });
-          posthog.identify(email);
+        const data = await res.json();
+
+        if (res.ok) {
+          document.getElementById('waitlist-form').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+          if (window.posthog) {
+            posthog.capture('waitlist_signup', { exam: exam, source: 'website' });
+            posthog.identify(email);
+          }
+        } else {
+          alert('Error: ' + (data.error || 'Something went wrong'));
         }
-      if (window.posthog) {
-      posthog.capture('waitlist_signup', { exam: exam, source: 'website' });
-        posthog.identify(email);
-        }
-      } else {
-        // Show actual error from server
-        alert('Error: ' + (data.error || 'Something went wrong'));
+      } catch (err) {
+        alert('Network error: ' + err.message);
       }
-    } catch (err) {
-      alert('Network error: ' + err.message);
-    }
-  });
-</script>
+    });
+  </script>
+
   <!-- PostHog -->
-<script>
-  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-  posthog.init('phc_rkWNCVAVuw5AjykdPTQ7sMtEG8PB22hhQMFBB5ZH2JKZ', {
-    api_host: 'https://us.posthog.com/project/sTMFPsFhdP1Ssg/replay/019e1beb-f581-7845-a2f7-75d102985060?t=1267'
-  });
-</script>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_rkWNCVAVuw5AjykdPTQ7sMtEG8PB22hhQMFBB5ZH2JKZ', {
+      api_host: 'https://us.posthog.com/project/sTMFPsFhdP1Ssg/replay/019e1beb-f581-7845-a2f7-75d102985060?t=1267'
+    });
+  </script>
 </body>
 </html>
