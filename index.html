@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoltClass – Charge Your Rank</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0A0A0A; color:white; font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+    .container { max-width:480px; width:90%; text-align:center; padding:40px 20px; }
+    .logo { font-size:2.5rem; font-weight:700; letter-spacing:-0.5px; color:#00F0FF; margin-bottom:24px; }
+    .logo span { color:white; }
+    h1 { font-size:2rem; line-height:1.2; margin-bottom:16px; }
+    .subhead { color:#B0B0B0; font-size:1.1rem; margin-bottom:40px; line-height:1.5; }
+    form { display:flex; flex-direction:column; gap:16px; }
+    input, select, button { padding:16px; border-radius:8px; font-size:1rem; border:1px solid #333; background:#1A1A1A; color:white; font-family:inherit; }
+    input:focus, select:focus { outline:none; border-color:#00F0FF; }
+    button { background:#00F0FF; color:#0A0A0A; font-weight:700; cursor:pointer; border:none; transition: all 0.2s; }
+    button:hover { background:#00D0E0; }
+    .note { color:#666; font-size:0.85rem; margin-top:20px; }
+    .success { display:none; background:#00F0FF20; border:1px solid #00F0FF; padding:16px; border-radius:8px; margin-top:20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">⚡ Volt<span>Class</span></div>
+    <h1>Built for Students Serious About Rank Improvement.</h1>
+    <p class="subhead">A pure-practice engine that plugs into your existing prep and forces your score upward. No lectures. No fluff. Only performance.</p>
+    <form id="waitlist-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <select id="exam" required>
+        <option value="">Select Exam</option>
+        <option>JEE Main</option>
+        <option>JEE Advanced</option>
+        <option>NEET UG</option>
+      </select>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="tel" id="phone" placeholder="Phone (optional)">
+      <input type="hidden" id="source" value="website">
+      <button type="submit">Get Early Access</button>
+    </form>
+    <div id="form-success" class="success">You're on the list. We'll email you when VoltClass is ready to charge your rank. ⚡</div>
+    <p class="note">We’ll never spam. Only rank-boosting updates.</p>
+  </div>
+
+  <script>
+    const SUPABASE_FUNCTION_URL = "https://<your-project>.supabase.co/functions/v1/waitlist-signup"; // paste your function URL
+
+    document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const full_name = document.getElementById('name').value.trim();
+      const exam = document.getElementById('exam').value;
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const source = "website";
+
+      const payload = { full_name, email, exam, phone, source };
+
+      try {
+        const res = await fetch(SUPABASE_FUNCTION_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          document.getElementById('waitlist-form').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        alert('Network error. Check connection.');
+      }
+    });
+  </script>
+</body>
+</html>
