@@ -41,45 +41,45 @@
     <div id="form-success" class="success">You're on the list. We'll email you when VoltClass is ready to charge your rank. ⚡</div>
     <p class="note">We’ll never spam. Only rank-boosting updates.</p>
   </div>
+<script>
+  const SUPABASE_FUNCTION_URL = "https://gnchqrwegnmjrkxphevb.supabase.co/functions/v1/waitlist-signup"; // paste the correct URL
 
-  <script>
-    const SUPABASE_FUNCTION_URL = "https://gnchqrwegnmjrkxphevb.supabase.co/functions/v1/waitlist-signup"; // paste your function URL
+  document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const full_name = document.getElementById('name').value.trim();
+    const exam = document.getElementById('exam').value;
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const source = "website";
 
-    document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const full_name = document.getElementById('name').value.trim();
-      const exam = document.getElementById('exam').value;
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const source = "website";
+    const payload = { full_name, email, exam, phone, source };
 
-      const payload = { full_name, email, exam, phone, source };
-
-try {
-    const res = await fetch(SUPABASE_FUNCTION_URL, {
+    try {
+      const res = await fetch(SUPABASE_FUNCTION_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-    });
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (res.ok) {
+      if (res.ok) {
+        // Success
         document.getElementById('waitlist-form').style.display = 'none';
         document.getElementById('form-success').style.display = 'block';
-        // PostHog capture if you have it
         if (window.posthog) {
-            posthog.capture('waitlist_signup', { exam, source: 'website' });
-            posthog.identify(email);
+          posthog.capture('waitlist_signup', { exam, source: 'website' });
+          posthog.identify(email);
         }
-    } else {
+      } else {
+        // Show actual error from server
         alert('Error: ' + (data.error || 'Something went wrong'));
+      }
+    } catch (err) {
+      alert('Network error: ' + err.message);
     }
-} catch (err) {
-    alert('Network error: ' + err.message);
-}
-      
-    });
-  </script>
+  });
+</script>
+  
 </body>
 </html>
