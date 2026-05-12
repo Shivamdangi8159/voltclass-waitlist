@@ -55,21 +55,30 @@
 
       const payload = { full_name, email, exam, phone, source };
 
-      try {
-        const res = await fetch(SUPABASE_FUNCTION_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        if (res.ok) {
-          document.getElementById('waitlist-form').style.display = 'none';
-          document.getElementById('form-success').style.display = 'block';
-        } else {
-          alert('Something went wrong. Please try again.');
+try {
+    const res = await fetch(SUPABASE_FUNCTION_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+        document.getElementById('waitlist-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        // PostHog capture if you have it
+        if (window.posthog) {
+            posthog.capture('waitlist_signup', { exam, source: 'website' });
+            posthog.identify(email);
         }
-      } catch (err) {
-        alert('Network error. Check connection.');
-      }
+    } else {
+        alert('Error: ' + (data.error || 'Something went wrong'));
+    }
+} catch (err) {
+    alert('Network error: ' + err.message);
+}
+      
     });
   </script>
 </body>
