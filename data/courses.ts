@@ -1,1 +1,108 @@
+import { CourseData } from '@/types';
 
+export const COURSES_DATA: CourseData[] = [
+  {
+    id: 'neet-lakshya-2026',
+    slug: 'lakshya-neet-2026',
+    title: 'Lakshya NEET 2026',
+    exam: 'NEET',
+    subject: ['Physics', 'Chemistry', 'Biology'],
+    targetClass: 'Class 12th',
+    description:
+      'Complete NEET preparation system with structured practice, 3D smart flashcards, equal-distribution DIY test engine, and 60 monthly AI doubt resolution tokens[cite: 4, 5, 6].',
+    price: 4999,
+    originalPrice: 8999,
+    currency: 'INR',
+    chapters: [
+      { id: 'c1', title: 'Electrostatics & Current Electricity', topicsCount: 14, questionCount: 420 },
+      { id: 'c2', title: 'Chemical Kinetics & Electrochemistry', topicsCount: 12, questionCount: 380 },
+      { id: 'c3', title: 'Genetics & Molecular Basis of Inheritance', topicsCount: 16, questionCount: 510 },
+      { id: 'c4', title: 'Human Physiology & Neural Control', topicsCount: 18, questionCount: 580 },
+    ],
+    features: [
+      'Unlimited DIY Custom Practice Tests[cite: 4, 7]',
+      'Equal Topic Distribution Balance Algorithm[cite: 4, 7]',
+      '3D Flashcard Deck with Private Bucket Sync[cite: 6]',
+      '60 Monthly AI Doubt Resolution Tokens[cite: 5]',
+      'LaTeX Math Rendering & 5-Column Question Matrix[cite: 4, 7]',
+    ],
+    status: 'Active',
+  },
+  {
+    id: 'jee-lakshya-2026',
+    slug: 'lakshya-jee-2026',
+    title: 'Lakshya JEE Main & Advanced 2026',
+    exam: 'JEE Main',
+    subject: ['Physics', 'Chemistry', 'Mathematics'],
+    targetClass: 'Class 12th',
+    description:
+      'Rigorous problem-solving and adaptive testing built specifically for Class 12 JEE Main and Advanced aspirants[cite: 5]. Includes multi-statement and numerical practice sets[cite: 4, 7].',
+    price: 4999,
+    originalPrice: 8999,
+    currency: 'INR',
+    chapters: [
+      { id: 'jc1', title: 'Calculus & Differential Equations', topicsCount: 18, questionCount: 650 },
+      { id: 'jc2', title: 'Electrodynamics & Capacitance', topicsCount: 15, questionCount: 520 },
+      { id: 'jc3', title: 'Coordination Chemistry & Reaction Mechanisms', topicsCount: 14, questionCount: 480 },
+      { id: 'jc4', title: 'Matrices & Complex Numbers', topicsCount: 12, questionCount: 410 },
+    ],
+    features: [
+      'LaTeX Math Equations & Solution Breakdowns[cite: 4, 7]',
+      'Numerical, Assertion-Reason & Match Column Filters[cite: 4, 7]',
+      'DeepSeek AI Smart Revision (English & Hinglish)[cite: 5]',
+      '60 AI Doubt Tokens Refreshed Every Month[cite: 5]',
+      'Detailed Topic Accuracy Analytics Bar Chart[cite: 4, 7]',
+    ],
+    status: 'Active',
+  },
+  {
+    id: 'neet-shikhar-droppers',
+    slug: 'shikhar-neet-droppers',
+    title: 'Shikhar NEET Droppers Batch',
+    exam: 'NEET',
+    subject: ['Physics', 'Chemistry', 'Biology'],
+    targetClass: 'Dropper Batch',
+    description:
+      'Intensive 1-year repeaters performance system focused on weak topic identification, daily speed tracking, and rapid 3D flashcard revision[cite: 4, 6].',
+    price: 5999,
+    originalPrice: 9999,
+    currency: 'INR',
+    chapters: [
+      { id: 'sc1', title: 'Complete Mechanics & Rotational Dynamics', topicsCount: 22, questionCount: 890 },
+      { id: 'sc2', title: 'Organic Chemistry & Hydrocarbons', topicsCount: 19, questionCount: 740 },
+      { id: 'sc3', title: 'Cell Biology & Plant Physiology', topicsCount: 20, questionCount: 810 },
+    ],
+    features: [
+      'Daily Target Speed & Precision Trackers[cite: 4]',
+      'Direct Private Storage Bucket Flashcards[cite: 6]',
+      'Follow-up Q&A Support with AI Tutor[cite: 5]',
+      '5-Column Question Navigator Palette[cite: 4, 7]',
+    ],
+    status: 'Active',
+  },
+  {
+    id: 'jee-shikhar-advanced',
+    slug: 'shikhar-jee-advanced',
+    title: 'Shikhar JEE Advanced Rank Booster',
+    exam: 'JEE Advanced',
+    subject: ['Physics', 'Chemistry', 'Mathematics'],
+    targetClass: 'All Levels',
+    description:
+      'Advanced-level multi-correct, comprehension, and matrix-match question configurator with step-by-step LaTeX explanations[cite: 4, 7].',
+    price: 6499,
+    originalPrice: 10999,
+    currency: 'INR',
+    chapters: [
+      { id: 'ac1', title: 'Advanced Rotational Mechanics & Waves', topicsCount: 16, questionCount: 560 },
+      { id: 'ac2', title: 'Thermodynamics & Physical Equilibria', topicsCount: 14, questionCount: 490 },
+      { id: 'ac3', title: 'Integral Calculus & Vectors 3D', topicsCount: 18, questionCount: 620 },
+    ],
+    features: [
+      'Advanced Difficulty Question Filters[cite: 4, 7]',
+      'Live Timer & Question Status Matrix[cite: 4, 7]',
+      '24/7 DeepSeek AI Doubt Resolver[cite: 5]',
+      'Topic-wise Accuracy Progress Bars[cite: 4, 7]',
+    ],
+    status: 'Active',
+  },
+];
