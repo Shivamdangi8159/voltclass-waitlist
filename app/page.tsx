@@ -14,13 +14,16 @@ import {
   Sliders,
   Layers,
   Brain,
-  ShieldCheck,
   Download,
   ArrowRight,
   ChevronDown,
   Menu,
   X,
-  Star
+  Star,
+  FileText,
+  BarChart2,
+  Clock,
+  HelpCircle
 } from 'lucide-react';
 
 export default function SingleLandingPage() {
@@ -30,43 +33,43 @@ export default function SingleLandingPage() {
 
   const courses = [
     {
-      title: 'Lakshya NEET 2026',
+      title: 'Lakshya NEET Batch',
       exam: 'NEET',
-      target: 'Class 12th & Dropper',
+      target: 'Class 12th & Droppers',
       price: '₹4,999',
       originalPrice: '₹8,999',
       subjects: 'Physics, Chemistry, Biology',
       features: [
         'Unlimited DIY Custom Practice Sets',
-        'Balanced Equal Topic Distribution',
-        '3D Smart Flashcards Deck',
+        'Equal Topic Distribution Balance Algorithm',
+        '3D Smart Flashcard Deck Access',
         '60 Monthly AI Doubt Resolution Tokens',
       ],
       badge: 'Most Popular',
-      color: 'from-emerald-500/20 to-teal-500/10',
-      borderColor: 'border-emerald-500/30',
+      borderColor: 'border-emerald-500/40',
       textColor: 'text-emerald-400',
+      btnColor: 'bg-emerald-500 text-black hover:bg-emerald-400',
     },
     {
       title: 'Lakshya JEE Main & Advanced',
       exam: 'JEE',
-      target: 'Class 12th & Dropper',
+      target: 'Class 12th & Droppers',
       price: '₹4,999',
       originalPrice: '₹8,999',
       subjects: 'Physics, Chemistry, Mathematics',
       features: [
         'Numerical & Multi-Statement Question Filters',
         'Step-by-Step LaTeX Math Solutions',
-        'Topic-wise Accuracy Analytics',
+        'Topic-wise Accuracy Analytics Bar Chart',
         '60 Monthly AI Doubt Resolution Tokens',
       ],
       badge: 'Best Value',
-      color: 'from-blue-500/20 to-cyan-500/10',
-      borderColor: 'border-[#00E5FF]/30',
+      borderColor: 'border-[#00E5FF]/40',
       textColor: 'text-[#00E5FF]',
+      btnColor: 'bg-[#00E5FF] text-black hover:bg-[#33EBFF]',
     },
     {
-      title: 'Shikhar Rank Booster Batch',
+      title: 'Shikhar Rank Booster',
       exam: 'JEE / NEET',
       target: 'Droppers & Repeaters',
       price: '₹5,999',
@@ -79,16 +82,49 @@ export default function SingleLandingPage() {
         '24/7 AI Tutor Follow-up Support',
       ],
       badge: 'Intensive',
-      color: 'from-purple-500/20 to-pink-500/10',
-      borderColor: 'border-purple-500/30',
+      borderColor: 'border-purple-500/40',
       textColor: 'text-purple-400',
+      btnColor: 'bg-purple-500 text-white hover:bg-purple-400',
+    },
+  ];
+
+  const appFeatures = [
+    {
+      icon: <Sliders className="w-6 h-6 text-[#00E5FF]" />,
+      title: 'DIY Practice Engine',
+      desc: 'Pick specific subjects, select chapters & topics, filter by question type (Numerical, Assertion-Reason, Match Column), and set question limits with equal topic balance.',
+    },
+    {
+      icon: <Layers className="w-6 h-6 text-emerald-400" />,
+      title: '3D Smart Flashcards',
+      desc: 'Interactive flip cards with formula highlights, category badges, and LaTeX math equations directly synced from private storage buckets.',
+    },
+    {
+      icon: <Brain className="w-6 h-6 text-purple-400" />,
+      title: 'AI Doubt Resolution',
+      desc: '24/7 instant step-by-step doubt explanations and follow-up Q&A assistance in English or Romanized Hinglish.',
+    },
+    {
+      icon: <FileText className="w-6 h-6 text-amber-400" />,
+      title: 'Daily Practice Sheets & PYQs',
+      desc: 'Comprehensive topic-wise practice sheets, chapter quick notes, and previous year exam questions with live solution breakdowns.',
+    },
+    {
+      icon: <BarChart2 className="w-6 h-6 text-rose-400" />,
+      title: 'Deep Speed Analytics',
+      desc: 'Interactive 5-column question status matrix, time-elapsed per question, and topic-wise accuracy analytics.',
+    },
+    {
+      icon: <Sparkles className="w-6 h-6 text-cyan-300" />,
+      title: 'Smart Revision Engine',
+      desc: 'AI-driven weak area tracking that automatically reorganizes missed concepts into focused revision sets.',
     },
   ];
 
   const faqs = [
     {
       q: 'How does the VoltClass mobile app work?',
-      a: 'VoltClass is a pure practice and rank-boosting platform. You can configure custom question sets, practice with 3D smart flashcards, track your speed and precision, and solve doubts instantly using our AI resolution engine.',
+      a: 'VoltClass is a pure-practice and rank-boosting platform. You can configure custom question sets, practice with 3D smart flashcards, track speed and precision, and resolve doubts instantly using our AI engine.',
     },
     {
       q: 'Is the course content aligned with the latest NTA syllabus?',
@@ -96,18 +132,18 @@ export default function SingleLandingPage() {
     },
     {
       q: 'How do I download the Android app?',
-      a: 'Click the "Download APK" or "Google Play" button on this page to install the official VoltClass mobile app directly on your Android smartphone.',
+      a: 'Click the "Google Play" or "Download Direct APK" button on this page to install the official VoltClass mobile app directly on your Android device.',
     },
     {
       q: 'What are AI Doubt Tokens?',
-      a: 'Every premium course includes monthly AI tokens that allow you to take a picture of any difficult question and get instant step-by-step LaTeX mathematical explanations.',
+      a: 'Every course includes 60 monthly AI tokens that allow you to take a picture or type any question and receive instant step-by-step LaTeX mathematical explanations.',
     },
   ];
 
   return (
     <div className="min-h-screen bg-[#07090C] text-[#F5F7FA] font-sans selection:bg-[#00E5FF] selection:text-black">
       
-      {/* ================= STICKY NAVBAR ================= */}
+      {/* ================= HEADER ================= */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#07090C]/90 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
@@ -124,9 +160,9 @@ export default function SingleLandingPage() {
             </div>
           </Link>
 
-          {/* Desktop Nav Anchors */}
+          {/* Nav Anchors */}
           <nav className="hidden md:flex items-center gap-8 text-xs font-bold text-[#9AA4B2]">
-            <a href="#about" className="hover:text-[#00E5FF] transition-colors">App Info</a>
+            <a href="#about" className="hover:text-[#00E5FF] transition-colors">App Details</a>
             <a href="#features" className="hover:text-[#00E5FF] transition-colors">Features</a>
             <a href="#courses" className="hover:text-[#00E5FF] transition-colors">Batches & Fees</a>
             <a href="#download" className="hover:text-[#00E5FF] transition-colors">Download App</a>
@@ -151,10 +187,10 @@ export default function SingleLandingPage() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0D1117] border-b border-white/10 px-6 py-6 space-y-4">
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">App Info</a>
+          <div className="md:hidden bg-[#0D1117] border-b border-white/10 px-6 py-6 space-y-3">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">App Details</a>
             <a href="#features" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">Features</a>
             <a href="#courses" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">Batches & Fees</a>
             <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">Download App</a>
@@ -163,10 +199,10 @@ export default function SingleLandingPage() {
         )}
       </header>
 
-      <main className="pt-24">
+      <main className="pt-20">
 
         {/* ================= HERO SECTION ================= */}
-        <section className="pt-16 pb-20 relative overflow-hidden">
+        <section id="about" className="pt-16 pb-20 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div className="inline-flex items-center gap-2 bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-4 py-2 rounded-full text-xs font-bold text-[#00E5FF] mb-6 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
               <Zap className="w-4 h-4" />
@@ -181,10 +217,9 @@ export default function SingleLandingPage() {
             </h1>
 
             <p className="text-sm sm:text-base text-[#9AA4B2] leading-relaxed max-w-2xl mx-auto mb-10">
-              The ultimate performance booster for NEET & JEE aspirants. DIY custom practice configurator, 3D smart flashcards, live speed velocity tracking, and instant AI doubt answers.
+              A pure practice engine that plugs into your existing preparation and drives your score upward. Custom DIY exercise configurator, 3D smart flashcards, live velocity tracking, and instant AI doubt resolution[cite: 5].
             </p>
 
-            {/* App Badges & Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <a
                 href="#download"
@@ -202,14 +237,14 @@ export default function SingleLandingPage() {
               </a>
             </div>
 
-            {/* App Dashboard Graphic Preview */}
+            {/* Dashboard Graphics Preview */}
             <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#11161D] to-[#0D1117] border border-white/15 rounded-3xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative">
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-rose-500" />
                   <div className="w-3 h-3 rounded-full bg-amber-500" />
                   <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                  <span className="text-xs text-[#9AA4B2] font-mono ml-2">VoltClass App Engine v2.4</span>
+                  <span className="text-xs text-[#9AA4B2] font-mono ml-2">VoltClass App Engine</span>
                 </div>
                 <div className="flex items-center gap-1 text-xs text-[#00E5FF] bg-[#00E5FF]/10 px-3 py-1 rounded-full border border-[#00E5FF]/20 font-bold">
                   <Star className="w-3.5 h-3.5 fill-[#00E5FF]" /> 4.9 Student Rating
@@ -235,9 +270,10 @@ export default function SingleLandingPage() {
                 </div>
               </div>
 
+              {/* 5-Column Status Matrix Preview */}
               <div className="bg-[#07090C] p-6 rounded-2xl border border-white/10 text-left">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider">Live Question Matrix • 5 per row</span>
+                  <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider">Live Question Status Matrix (5 per row)</span>
                   <span className="text-xs text-emerald-400 font-mono">Timer: 01:45</span>
                 </div>
                 <div className="grid grid-cols-5 gap-2">
@@ -252,61 +288,41 @@ export default function SingleLandingPage() {
           </div>
         </section>
 
-        {/* ================= APP FEATURES ================= */}
+        {/* ================= APP FEATURES SECTION ================= */}
         <section id="features" className="py-20 bg-[#0D1117] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider block mb-2">Engineered For Scores</span>
-              <h2 className="text-3xl sm:text-4xl font-black text-white">Why Aspirants Choose VoltClass</h2>
+              <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider block mb-2">Complete System Overview</span>
+              <h2 className="text-3xl sm:text-4xl font-black text-white">Engineered For Score Progression</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-[#11161D] border border-white/10 rounded-2xl p-8 hover:border-[#00E5FF]/40 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-[#00E5FF]/10 text-[#00E5FF] flex items-center justify-center mb-6">
-                  <Sliders className="w-6 h-6" />
+              {appFeatures.map((item, idx) => (
+                <div key={idx} className="bg-[#11161D] border border-white/10 rounded-2xl p-8 hover:border-[#00E5FF]/40 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                  <p className="text-xs text-[#9AA4B2] leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">DIY Custom Practice</h3>
-                <p className="text-xs text-[#9AA4B2] leading-relaxed">
-                  Choose specific subjects, chapters, and question types. Our algorithm balances questions equally across chosen topics.
-                </p>
-              </div>
-
-              <div className="bg-[#11161D] border border-white/10 rounded-2xl p-8 hover:border-[#00E5FF]/40 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6">
-                  <Layers className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">3D Smart Flashcards</h3>
-                <p className="text-xs text-[#9AA4B2] leading-relaxed">
-                  Flip through high-yield concept cards directly loaded from secure private storage buckets with LaTeX formula support.
-                </p>
-              </div>
-
-              <div className="bg-[#11161D] border border-white/10 rounded-2xl p-8 hover:border-[#00E5FF]/40 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6">
-                  <Brain className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">AI Doubt Resolution</h3>
-                <p className="text-xs text-[#9AA4B2] leading-relaxed">
-                  Get instant step-by-step math explanations and follow-up Q&A assistance 24/7 in English or Romanized Hinglish.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ================= COURSES & BATCHES ================= */}
+        {/* ================= BATCHES & FEES ================= */}
         <section id="courses" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider block mb-2">Structured Programs</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Enroll in Top Target Batches</h2>
-            <p className="text-xs sm:text-sm text-[#9AA4B2]">Includes full access to the DIY exercise engine, 3D smart flashcards, and AI doubt resolution tokens.</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Enroll in Target Batches</h2>
+            <p className="text-xs sm:text-sm text-[#9AA4B2]">Includes full access to the DIY practice engine, 3D smart flashcards, and AI doubt resolution tokens.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {courses.map((course, idx) => (
               <div
                 key={idx}
-                className={`bg-[#11161D] border ${course.borderColor} bg-gradient-to-b ${course.color} rounded-3xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all`}
+                className={`bg-[#11161D] border ${course.borderColor} rounded-3xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all shadow-xl`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -341,7 +357,7 @@ export default function SingleLandingPage() {
 
                 <a
                   href="#contact"
-                  className="w-full bg-[#00E5FF] text-[#07090C] font-extrabold text-xs py-3.5 rounded-xl text-center shadow-[0_0_15px_rgba(0,229,255,0.3)] hover:bg-[#33EBFF] transition-all"
+                  className={`w-full font-extrabold text-xs py-3.5 rounded-xl text-center transition-all ${course.btnColor}`}
                 >
                   Enroll Now
                 </a>
@@ -350,7 +366,7 @@ export default function SingleLandingPage() {
           </div>
         </section>
 
-        {/* ================= PLAY STORE / APP DOWNLOAD ================= */}
+        {/* ================= GOOGLE PLAY & APK DOWNLOAD ================= */}
         <section id="download" className="py-20 bg-gradient-to-r from-[#0D1117] via-[#11161D] to-[#0D1117] border-y border-white/10">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-xl">
@@ -366,9 +382,8 @@ export default function SingleLandingPage() {
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
-                {/* Simulated Google Play Badge */}
                 <button
-                  onClick={() => alert("Downloading official VoltClass APK...")}
+                  onClick={() => alert("Redirecting to Google Play Store...")}
                   className="bg-black border border-white/20 hover:border-[#00E5FF] px-6 py-3 rounded-2xl flex items-center gap-4 transition-all"
                 >
                   <div className="text-2xl">▶</div>
@@ -379,7 +394,7 @@ export default function SingleLandingPage() {
                 </button>
 
                 <button
-                  onClick={() => alert("Direct APK Download starting...")}
+                  onClick={() => alert("Starting direct APK download...")}
                   className="bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-2xl flex items-center gap-3 transition-all text-xs font-bold text-white"
                 >
                   <Download className="w-4 h-4 text-[#00E5FF]" />
@@ -404,7 +419,7 @@ export default function SingleLandingPage() {
         {/* ================= FAQ SECTION ================= */}
         <section className="py-20 max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-black text-center text-white mb-3">Frequently Asked Questions</h2>
-          <p className="text-xs text-[#9AA4B2] text-center mb-10">Quick answers about our courses and app access.</p>
+          <p className="text-xs text-[#9AA4B2] text-center mb-10">Quick answers about our courses and mobile app access.</p>
 
           <div className="space-y-3">
             {faqs.map((faq, idx) => (
@@ -461,7 +476,7 @@ export default function SingleLandingPage() {
                       ✓
                     </div>
                     <h3 className="text-lg font-bold text-white mb-2">Message Sent!</h3>
-                    <p className="text-xs text-[#9AA4B2]">Thank you! We will get back to you shortly.</p>
+                    <p className="text-xs text-[#9AA4B2]">Thank you! Our support team will get back to you shortly.</p>
                   </div>
                 ) : (
                   <form
@@ -494,7 +509,7 @@ export default function SingleLandingPage() {
                       <textarea
                         rows={4}
                         required
-                        placeholder="I have a question regarding course access..."
+                        placeholder="I have a question regarding course access or mobile enrollment..."
                         className="w-full bg-[#07090C] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#00E5FF]"
                       />
                     </div>
