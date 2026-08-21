@@ -232,19 +232,20 @@ export default function SingleLandingPage() {
             </div>
 
             {/* 5 COLUMN STATUS MATRIX */}
-            <div style={{ backgroundColor: '#F8FAFC', padding: '20px', borderRadius: '18px', border: '1px solid #E2E8F0' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                <span style={{ fontSize: '12px', fontWeight: '800', color: '#1D4ED8', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Live Question Status Matrix (5 per row)</span>
-                <span style={{ fontSize: '12px', fontWeight: '700', color: '#059669' }}>Timer: 01:45</span>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
-                <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#DCFCE7', border: '1px solid #86EFAC', color: '#166534', display: 'flex', itemsCenter: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>1 ✓</div>
-                <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#DCFCE7', border: '1px solid #86EFAC', color: '#166534', display: 'flex', itemsCenter: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>2 ✓</div>
-                <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#FEE2E2', border: '1px solid #FCA5A5', color: '#991B1B', display: 'flex', itemsCenter: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>3 ✗</div>
-                <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#E0F2FE', border: '1px solid #38BDF8', color: '#0369A1', display: 'flex', itemsCenter: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>4 •</div>
-                <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#FFF', border: '1px solid #CBD5E1', color: '#64748B', display: 'flex', itemsCenter: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>5</div>
-              </div>
-            </div>
+            {/* 5 COLUMN STATUS MATRIX */}
+<div style={{ backgroundColor: '#F8FAFC', padding: '20px', borderRadius: '18px', border: '1px solid #E2E8F0' }}>
+  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+    <span style={{ fontSize: '12px', fontWeight: '800', color: '#1D4ED8', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Live Question Status Matrix (5 per row)</span>
+    <span style={{ fontSize: '12px', fontWeight: '700', color: '#059669' }}>Timer: 01:45</span>
+  </div>
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
+    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#DCFCE7', border: '1px solid #86EFAC', color: '#166534', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>1 ✓</div>
+    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#DCFCE7', border: '1px solid #86EFAC', color: '#166534', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>2 ✓</div>
+    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#FEE2E2', border: '1px solid #FCA5A5', color: '#991B1B', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>3 ✗</div>
+    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#E0F2FE', border: '1px solid #38BDF8', color: '#0369A1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>4 •</div>
+    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#FFF', border: '1px solid #CBD5E1', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>5</div>
+  </div>
+</div>
           </div>
         </section>
 
