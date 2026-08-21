@@ -1,15 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
   Zap,
   Smartphone,
-  BookOpen,
-  Mail,
-  Phone,
-  MessageSquare,
-  Sparkles,
   CheckCircle2,
   Sliders,
   Layers,
@@ -20,16 +14,15 @@ import {
   Menu,
   X,
   Star,
-  FileText,
-  BarChart2,
-  Clock,
-  HelpCircle
+  Mail,
+  Phone,
+  MessageSquare
 } from 'lucide-react';
 
 export default function SingleLandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [contactSubmitted, setContactSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
 
   const courses = [
     {
@@ -41,14 +34,12 @@ export default function SingleLandingPage() {
       subjects: 'Physics, Chemistry, Biology',
       features: [
         'Unlimited DIY Custom Practice Sets',
-        'Equal Topic Distribution Balance Algorithm',
+        'Balanced Equal Topic Distribution',
         '3D Smart Flashcard Deck Access',
         '60 Monthly AI Doubt Resolution Tokens',
       ],
       badge: 'Most Popular',
-      borderColor: 'border-emerald-500/40',
-      textColor: 'text-emerald-400',
-      btnColor: 'bg-emerald-500 text-black hover:bg-emerald-400',
+      accentColor: '#00E676',
     },
     {
       title: 'Lakshya JEE Main & Advanced',
@@ -58,15 +49,13 @@ export default function SingleLandingPage() {
       originalPrice: '₹8,999',
       subjects: 'Physics, Chemistry, Mathematics',
       features: [
-        'Numerical & Multi-Statement Question Filters',
+        'Numerical & Multi-Statement Filters',
         'Step-by-Step LaTeX Math Solutions',
         'Topic-wise Accuracy Analytics Bar Chart',
         '60 Monthly AI Doubt Resolution Tokens',
       ],
       badge: 'Best Value',
-      borderColor: 'border-[#00E5FF]/40',
-      textColor: 'text-[#00E5FF]',
-      btnColor: 'bg-[#00E5FF] text-black hover:bg-[#33EBFF]',
+      accentColor: '#00E5FF',
     },
     {
       title: 'Shikhar Rank Booster',
@@ -76,48 +65,13 @@ export default function SingleLandingPage() {
       originalPrice: '₹9,999',
       subjects: 'Complete PCB / PCM',
       features: [
-        'High-Yield Intensive Revision Worksheets',
+        'High-Yield Intensive Worksheets',
         'Direct Private Bucket Storage Access',
         'Speed & Precision Velocity Trackers',
         '24/7 AI Tutor Follow-up Support',
       ],
       badge: 'Intensive',
-      borderColor: 'border-purple-500/40',
-      textColor: 'text-purple-400',
-      btnColor: 'bg-purple-500 text-white hover:bg-purple-400',
-    },
-  ];
-
-  const appFeatures = [
-    {
-      icon: <Sliders className="w-6 h-6 text-[#00E5FF]" />,
-      title: 'DIY Practice Engine',
-      desc: 'Pick specific subjects, select chapters & topics, filter by question type (Numerical, Assertion-Reason, Match Column), and set question limits with equal topic balance.',
-    },
-    {
-      icon: <Layers className="w-6 h-6 text-emerald-400" />,
-      title: '3D Smart Flashcards',
-      desc: 'Interactive flip cards with formula highlights, category badges, and LaTeX math equations directly synced from private storage buckets.',
-    },
-    {
-      icon: <Brain className="w-6 h-6 text-purple-400" />,
-      title: 'AI Doubt Resolution',
-      desc: '24/7 instant step-by-step doubt explanations and follow-up Q&A assistance in English or Romanized Hinglish.',
-    },
-    {
-      icon: <FileText className="w-6 h-6 text-amber-400" />,
-      title: 'Daily Practice Sheets & PYQs',
-      desc: 'Comprehensive topic-wise practice sheets, chapter quick notes, and previous year exam questions with live solution breakdowns.',
-    },
-    {
-      icon: <BarChart2 className="w-6 h-6 text-rose-400" />,
-      title: 'Deep Speed Analytics',
-      desc: 'Interactive 5-column question status matrix, time-elapsed per question, and topic-wise accuracy analytics.',
-    },
-    {
-      icon: <Sparkles className="w-6 h-6 text-cyan-300" />,
-      title: 'Smart Revision Engine',
-      desc: 'AI-driven weak area tracking that automatically reorganizes missed concepts into focused revision sets.',
+      accentColor: '#A855F7',
     },
   ];
 
@@ -141,402 +95,175 @@ export default function SingleLandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#07090C] text-[#F5F7FA] font-sans selection:bg-[#00E5FF] selection:text-black">
+    <div style={{ backgroundColor: '#07090C', color: '#F5F7FA', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
       
-      {/* ================= HEADER ================= */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#07090C]/90 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#00A3FF] flex items-center justify-center text-black font-black text-xl shadow-[0_0_20px_rgba(0,229,255,0.4)]">
+      {/* HEADER */}
+      <header style={{ position: 'sticky', top: 0, zIndex: 50, backgroundColor: 'rgba(7,9,12,0.95)', borderBottom: '1 border-white/10', backdropFilter: 'blur(12px)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #00E5FF, #00A3FF)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: '900', fontSize: '20px' }}>
               ⚡
             </div>
             <div>
-              <span className="text-2xl font-black tracking-tight text-white">
-                Volt<span className="text-[#00E5FF]">Class</span>
-              </span>
-              <span className="text-[10px] font-bold text-[#9AA4B2] tracking-widest uppercase block -mt-1">
-                Charge Your Rank
-              </span>
+              <span style={{ fontSize: '22px', fontWeight: '900', color: '#FFF' }}>Volt<span style={{ color: '#00E5FF' }}>Class</span></span>
+              <span style={{ display: 'block', fontSize: '9px', fontWeight: '700', color: '#9AA4B2', letterSpacing: '1px', textTransform: 'uppercase', marginTop: '-4px' }}>Charge Your Rank</span>
             </div>
-          </Link>
+          </div>
 
-          {/* Nav Anchors */}
-          <nav className="hidden md:flex items-center gap-8 text-xs font-bold text-[#9AA4B2]">
-            <a href="#about" className="hover:text-[#00E5FF] transition-colors">App Details</a>
-            <a href="#features" className="hover:text-[#00E5FF] transition-colors">Features</a>
-            <a href="#courses" className="hover:text-[#00E5FF] transition-colors">Batches & Fees</a>
-            <a href="#download" className="hover:text-[#00E5FF] transition-colors">Download App</a>
-            <a href="#contact" className="hover:text-[#00E5FF] transition-colors">Contact</a>
+          <nav style={{ display: 'flex', gap: '24px', fontSize: '13px', fontWeight: '600' }}>
+            <a href="#about" style={{ color: '#9AA4B2', textDecoration: 'none' }}>App Details</a>
+            <a href="#features" style={{ color: '#9AA4B2', textDecoration: 'none' }}>Features</a>
+            <a href="#courses" style={{ color: '#9AA4B2', textDecoration: 'none' }}>Batches & Fees</a>
+            <a href="#download" style={{ color: '#9AA4B2', textDecoration: 'none' }}>Download App</a>
+            <a href="#contact" style={{ color: '#9AA4B2', textDecoration: 'none' }}>Contact</a>
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="#download"
-              className="bg-[#00E5FF] text-[#07090C] font-extrabold text-xs px-5 py-2.5 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.35)] hover:bg-[#33EBFF] transition-all flex items-center gap-2 hover:scale-[1.02]"
-            >
-              <Smartphone className="w-4 h-4" />
-              <span>Get Mobile App</span>
-            </a>
-          </div>
-
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white p-2"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-[#00E5FF]" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <a href="#download" style={{ backgroundColor: '#00E5FF', color: '#07090C', padding: '10px 20px', borderRadius: '12px', fontWeight: '800', fontSize: '12px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <Smartphone size={16} /> Get Mobile App
+          </a>
         </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0D1117] border-b border-white/10 px-6 py-6 space-y-3">
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">App Details</a>
-            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">Features</a>
-            <a href="#courses" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">Batches & Fees</a>
-            <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">Download App</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-[#9AA4B2] py-2">Contact</a>
-          </div>
-        )}
       </header>
 
-      <main className="pt-20">
+      {/* HERO SECTION */}
+      <section id="about" style={{ padding: '80px 24px', textAlign: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(0,229,255,0.1)', border: '1px solid rgba(0,229,255,0.2)', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', color: '#00E5FF', fontWeight: '700', marginBottom: '24px' }}>
+          <Zap size={14} /> High-Performance NEET & JEE Practice Engine
+        </div>
 
-        {/* ================= HERO SECTION ================= */}
-        <section id="about" className="pt-16 pb-20 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-4 py-2 rounded-full text-xs font-bold text-[#00E5FF] mb-6 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
-              <Zap className="w-4 h-4" />
-              <span>High-Performance NEET & JEE Practice Engine</span>
+        <h1 style={{ fontSize: '48px', fontWeight: '900', lineHeight: '1.1', marginBottom: '20px', color: '#FFF' }}>
+          Prepare Smarter. Practice Harder. <br />
+          <span style={{ color: '#00E5FF' }}>Charge Your Rank.</span>
+        </h1>
+
+        <p style={{ color: '#9AA4B2', fontSize: '16px', lineHeight: '1.6', maxWidth: '700px', margin: '0 auto 32px' }}>
+          A pure practice engine that plugs into your existing preparation and drives your score upward. Custom DIY exercise configurator, 3D smart flashcards, live velocity tracking, and instant AI doubt resolution.
+        </p>
+
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '48px' }}>
+          <a href="#download" style={{ backgroundColor: '#00E5FF', color: '#07090C', padding: '14px 28px', borderRadius: '12px', fontWeight: '800', fontSize: '14px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <Smartphone size={18} /> Get App on Android
+          </a>
+          <a href="#courses" style={{ backgroundColor: '#11161D', color: '#FFF', border: '1px solid rgba(255,255,255,0.15)', padding: '14px 28px', borderRadius: '12px', fontWeight: '700', fontSize: '14px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            View Batches & Fees <ArrowRight size={16} color="#00E5FF" />
+          </a>
+        </div>
+
+        {/* MOCKUP CARD */}
+        <div style={{ backgroundColor: '#11161D', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '24px', padding: '24px', textAlign: 'left', boxShadow: '0 20px 50px rgba(0,0,0,0.6)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '16px', marginBottom: '20px' }}>
+            <span style={{ fontSize: '13px', color: '#9AA4B2', fontWeight: '600' }}>VoltClass App Engine v2.4</span>
+            <span style={{ color: '#00E5FF', fontSize: '12px', fontWeight: '700', backgroundColor: 'rgba(0,229,255,0.1)', padding: '4px 12px', borderRadius: '12px' }}>★ 4.9 Student Rating</span>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ backgroundColor: '#07090C', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ fontSize: '10px', color: '#9AA4B2', display: 'block', fontWeight: '700' }}>QUESTIONS SOLVED</span>
+              <span style={{ fontSize: '24px', fontWeight: '900', color: '#FFF' }}>1,420+</span>
             </div>
+            <div style={{ backgroundColor: '#07090C', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ fontSize: '10px', color: '#9AA4B2', display: 'block', fontWeight: '700' }}>ACCURACY LEVEL</span>
+              <span style={{ fontSize: '24px', fontWeight: '900', color: '#00E676' }}>88.4%</span>
+            </div>
+            <div style={{ backgroundColor: '#07090C', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ fontSize: '10px', color: '#9AA4B2', display: 'block', fontWeight: '700' }}>DOUBT TOKENS</span>
+              <span style={{ fontSize: '24px', fontWeight: '900', color: '#00E5FF' }}>52 / 60</span>
+            </div>
+            <div style={{ backgroundColor: '#07090C', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ fontSize: '10px', color: '#9AA4B2', display: 'block', fontWeight: '700' }}>TARGET RANK</span>
+              <span style={{ fontSize: '24px', fontWeight: '900', color: '#FFB300' }}>Top 500</span>
+            </div>
+          </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-[1.1]">
-              Prepare Smarter. Practice Harder.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#00A3FF] to-emerald-400">
-                Charge Your Rank.
-              </span>
-            </h1>
+          {/* 5 COLUMN MATRIX */}
+          <div style={{ backgroundColor: '#07090C', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <span style={{ fontSize: '12px', fontWeight: '800', color: '#00E5FF', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>Live Question Status Matrix (5 per row)</span>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
+              <div style={{ height: '36px', borderRadius: '10px', backgroundColor: 'rgba(0,230,118,0.15)', border: '1px solid #00E676', color: '#00E676', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>1 ✓</div>
+              <div style={{ height: '36px', borderRadius: '10px', backgroundColor: 'rgba(0,230,118,0.15)', border: '1px solid #00E676', color: '#00E676', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>2 ✓</div>
+              <div style={{ height: '36px', borderRadius: '10px', backgroundColor: 'rgba(255,82,82,0.15)', border: '1px solid #FF5252', color: '#FF5252', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>3 ✗</div>
+              <div style={{ height: '36px', borderRadius: '10px', backgroundColor: 'rgba(0,229,255,0.15)', border: '1px solid #00E5FF', color: '#00E5FF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>4 •</div>
+              <div style={{ height: '36px', borderRadius: '10px', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#9AA4B2', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>5</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <p className="text-sm sm:text-base text-[#9AA4B2] leading-relaxed max-w-2xl mx-auto mb-10">
-              A pure practice engine that plugs into your existing preparation and drives your score upward. Custom DIY exercise configurator, 3D smart flashcards, live velocity tracking, and instant AI doubt resolution[cite: 5].
+      {/* BATCHES & FEES */}
+      <section id="courses" style={{ padding: '80px 24px', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <span style={{ color: '#00E5FF', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px' }}>Structured Programs</span>
+          <h2 style={{ fontSize: '36px', fontWeight: '900', color: '#FFF', marginTop: '8px' }}>Target Batches & Pricing</h2>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          {courses.map((course, idx) => (
+            <div key={idx} style={{ backgroundColor: '#11161D', border: `1px solid ${course.accentColor}40`, borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ color: course.accentColor, backgroundColor: 'rgba(255,255,255,0.05)', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: '800' }}>{course.exam}</span>
+                <h3 style={{ fontSize: '22px', fontWeight: '900', color: '#FFF', marginTop: '16px', marginBottom: '8px' }}>{course.title}</h3>
+                <p style={{ fontSize: '12px', color: '#9AA4B2', marginBottom: '24px' }}>{course.subjects}</p>
+
+                <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '20px', marginBottom: '24px' }}>
+                  <span style={{ fontSize: '32px', fontWeight: '900', color: '#FFF' }}>{course.price}</span>
+                  <span style={{ fontSize: '14px', color: '#9AA4B2', textDecoration: 'line-through', marginLeft: '8px' }}>{course.originalPrice}</span>
+                </div>
+
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0' }}>
+                  {course.features.map((feat, fIdx) => (
+                    <li key={fIdx} style={{ fontSize: '13px', color: '#F5F7FA', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <CheckCircle2 size={16} color={course.accentColor} /> {feat}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a href="#contact" style={{ backgroundColor: course.accentColor, color: '#000', padding: '14px', borderRadius: '12px', textAlign: 'center', fontWeight: '800', fontSize: '13px', textDecoration: 'none' }}>
+                Enroll Now
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DOWNLOAD SECTION */}
+      <section id="download" style={{ backgroundColor: '#0D1117', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '80px 24px' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '48px' }}>
+          <div>
+            <span style={{ color: '#00E676', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>Official Mobile App</span>
+            <h2 style={{ fontSize: '36px', fontWeight: '900', color: '#FFF', marginTop: '8px', marginBottom: '16px' }}>Practice Anywhere on Android</h2>
+            <p style={{ color: '#9AA4B2', fontSize: '14px', lineHeight: '1.6', marginBottom: '32px' }}>
+              Take timed mock exercises, review 3D smart flashcards, and solve doubts right on your smartphone. Available now on Android.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <a
-                href="#download"
-                className="w-full sm:w-auto bg-[#00E5FF] text-[#07090C] font-extrabold text-sm px-8 py-4 rounded-xl shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:bg-[#33EBFF] transition-all flex items-center justify-center gap-3 hover:scale-[1.02]"
-              >
-                <Smartphone className="w-5 h-5" />
-                <span>Get App on Android</span>
-              </a>
-              <a
-                href="#courses"
-                className="w-full sm:w-auto bg-[#11161D] text-white border border-white/10 hover:border-white/20 font-bold text-sm px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2"
-              >
-                <span>View Batches & Fees</span>
-                <ArrowRight className="w-4 h-4 text-[#00E5FF]" />
-              </a>
-            </div>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <button onClick={() => alert('Opening Play Store...')} style={{ backgroundColor: '#000', border: '1px solid rgba(255,255,255,0.2)', padding: '12px 24px', borderRadius: '16px', color: '#FFF', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <span style={{ fontSize: '20px' }}>▶</span>
+                <div style={{ textAlign: 'left' }}>
+                  <span style={{ fontSize: '9px', color: '#9AA4B2', display: 'block' }}>GET IT ON</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800' }}>Google Play</span>
+                </div>
+              </button>
 
-            {/* Dashboard Graphics Preview */}
-            <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#11161D] to-[#0D1117] border border-white/15 rounded-3xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative">
-              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-rose-500" />
-                  <div className="w-3 h-3 rounded-full bg-amber-500" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                  <span className="text-xs text-[#9AA4B2] font-mono ml-2">VoltClass App Engine</span>
-                </div>
-                <div className="flex items-center gap-1 text-xs text-[#00E5FF] bg-[#00E5FF]/10 px-3 py-1 rounded-full border border-[#00E5FF]/20 font-bold">
-                  <Star className="w-3.5 h-3.5 fill-[#00E5FF]" /> 4.9 Student Rating
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left mb-6">
-                <div className="bg-[#07090C] p-4 rounded-2xl border border-white/5">
-                  <span className="text-[10px] text-[#9AA4B2] font-bold block uppercase mb-1">Questions Solved</span>
-                  <span className="text-2xl font-black text-white">1,420+</span>
-                </div>
-                <div className="bg-[#07090C] p-4 rounded-2xl border border-white/5">
-                  <span className="text-[10px] text-[#9AA4B2] font-bold block uppercase mb-1">Accuracy Level</span>
-                  <span className="text-2xl font-black text-emerald-400">88.4%</span>
-                </div>
-                <div className="bg-[#07090C] p-4 rounded-2xl border border-white/5">
-                  <span className="text-[10px] text-[#9AA4B2] font-bold block uppercase mb-1">Doubt Tokens</span>
-                  <span className="text-2xl font-black text-[#00E5FF]">52 / 60</span>
-                </div>
-                <div className="bg-[#07090C] p-4 rounded-2xl border border-white/5">
-                  <span className="text-[10px] text-[#9AA4B2] font-bold block uppercase mb-1">Target Rank</span>
-                  <span className="text-2xl font-black text-amber-400">Top 500</span>
-                </div>
-              </div>
-
-              {/* 5-Column Status Matrix Preview */}
-              <div className="bg-[#07090C] p-6 rounded-2xl border border-white/10 text-left">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider">Live Question Status Matrix (5 per row)</span>
-                  <span className="text-xs text-emerald-400 font-mono">Timer: 01:45</span>
-                </div>
-                <div className="grid grid-cols-5 gap-2">
-                  <div className="h-9 rounded-xl bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center text-xs font-bold">1 ✓</div>
-                  <div className="h-9 rounded-xl bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center text-xs font-bold">2 ✓</div>
-                  <div className="h-9 rounded-xl bg-rose-500/20 border border-rose-500 text-rose-400 flex items-center justify-center text-xs font-bold">3 ✗</div>
-                  <div className="h-9 rounded-xl bg-[#00E5FF]/20 border border-[#00E5FF] text-[#00E5FF] flex items-center justify-center text-xs font-bold animate-pulse">4 •</div>
-                  <div className="h-9 rounded-xl bg-white/5 border border-white/10 text-[#9AA4B2] flex items-center justify-center text-xs font-bold">5</div>
-                </div>
-              </div>
+              <button onClick={() => alert('Starting APK download...')} style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px 24px', borderRadius: '16px', color: '#FFF', fontWeight: '700', fontSize: '13px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Download size={16} color="#00E5FF" /> Download Direct APK
+              </button>
             </div>
           </div>
-        </section>
 
-        {/* ================= APP FEATURES SECTION ================= */}
-        <section id="features" className="py-20 bg-[#0D1117] border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider block mb-2">Complete System Overview</span>
-              <h2 className="text-3xl sm:text-4xl font-black text-white">Engineered For Score Progression</h2>
+          <div style={{ backgroundColor: '#07090C', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', padding: '32px', textAlign: 'center', minWidth: '280px' }}>
+            <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(0,229,255,0.1)', color: '#00E5FF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+              <Zap size={28} />
             </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {appFeatures.map((item, idx) => (
-                <div key={idx} className="bg-[#11161D] border border-white/10 rounded-2xl p-8 hover:border-[#00E5FF]/40 transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-xs text-[#9AA4B2] leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
+            <h4 style={{ fontSize: '18px', fontWeight: '800', color: '#FFF', marginBottom: '4px' }}>VoltClass App</h4>
+            <p style={{ fontSize: '12px', color: '#9AA4B2', marginBottom: '16px' }}>v2.4.0 • 100% Ad-Free • 24MB</p>
+            <span style={{ color: '#00E676', fontSize: '12px', fontWeight: '700', backgroundColor: 'rgba(0,230,118,0.1)', padding: '6px 16px', borderRadius: '20px' }}>✓ Verified Safe</span>
           </div>
-        </section>
-
-        {/* ================= BATCHES & FEES ================= */}
-        <section id="courses" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider block mb-2">Structured Programs</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Enroll in Target Batches</h2>
-            <p className="text-xs sm:text-sm text-[#9AA4B2]">Includes full access to the DIY practice engine, 3D smart flashcards, and AI doubt resolution tokens.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {courses.map((course, idx) => (
-              <div
-                key={idx}
-                className={`bg-[#11161D] border ${course.borderColor} rounded-3xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all shadow-xl`}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase ${course.textColor} bg-white/5 border border-white/10`}>
-                      {course.exam}
-                    </span>
-                    <span className="text-[10px] font-bold text-[#9AA4B2] bg-white/5 px-2.5 py-1 rounded-md">
-                      {course.target}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl font-black text-white mb-2">{course.title}</h3>
-                  <p className="text-xs text-[#9AA4B2] mb-6">{course.subjects}</p>
-
-                  <div className="mb-6 pb-6 border-b border-white/10">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-black text-white">{course.price}</span>
-                      <span className="text-sm text-[#9AA4B2] line-through">{course.originalPrice}</span>
-                      <span className="text-xs font-bold text-emerald-400 ml-auto">Valid 1 Year</span>
-                    </div>
-                  </div>
-
-                  <ul className="space-y-3 mb-8">
-                    {course.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-center gap-3 text-xs text-[#F5F7FA]">
-                        <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <a
-                  href="#contact"
-                  className={`w-full font-extrabold text-xs py-3.5 rounded-xl text-center transition-all ${course.btnColor}`}
-                >
-                  Enroll Now
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ================= GOOGLE PLAY & APK DOWNLOAD ================= */}
-        <section id="download" className="py-20 bg-gradient-to-r from-[#0D1117] via-[#11161D] to-[#0D1117] border-y border-white/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full text-xs font-bold text-emerald-400 mb-4">
-                <Smartphone className="w-3.5 h-3.5" />
-                <span>Official Mobile App</span>
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-black text-white mb-4">
-                Practice Anywhere on the <span className="text-[#00E5FF]">VoltClass App</span>
-              </h2>
-              <p className="text-xs sm:text-sm text-[#9AA4B2] leading-relaxed mb-8">
-                Take timed mock exercises, review 3D smart flashcards, and solve doubts right on your smartphone. Available now on Android.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => alert("Redirecting to Google Play Store...")}
-                  className="bg-black border border-white/20 hover:border-[#00E5FF] px-6 py-3 rounded-2xl flex items-center gap-4 transition-all"
-                >
-                  <div className="text-2xl">▶</div>
-                  <div className="text-left">
-                    <span className="text-[9px] uppercase tracking-wider text-[#9AA4B2] block">GET IT ON</span>
-                    <span className="text-sm font-bold text-white">Google Play</span>
-                  </div>
-                </button>
-
-                <button
-                  onClick={() => alert("Starting direct APK download...")}
-                  className="bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-2xl flex items-center gap-3 transition-all text-xs font-bold text-white"
-                >
-                  <Download className="w-4 h-4 text-[#00E5FF]" />
-                  <span>Download Direct APK</span>
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-[#07090C] border border-white/10 rounded-3xl p-6 shadow-2xl w-full max-w-sm text-center">
-              <div className="w-16 h-16 rounded-2xl bg-[#00E5FF]/10 text-[#00E5FF] flex items-center justify-center mx-auto mb-4 border border-[#00E5FF]/20">
-                <Zap className="w-8 h-8" />
-              </div>
-              <h4 className="text-lg font-bold text-white mb-1">VoltClass Android Engine</h4>
-              <p className="text-xs text-[#9AA4B2] mb-4">v2.4.0 • 100% Ad-Free • 24MB</p>
-              <div className="bg-white/5 rounded-xl p-3 text-xs text-emerald-400 font-bold border border-emerald-500/20">
-                ✓ Verified Safe & Virus Free
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= FAQ SECTION ================= */}
-        <section className="py-20 max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-black text-center text-white mb-3">Frequently Asked Questions</h2>
-          <p className="text-xs text-[#9AA4B2] text-center mb-10">Quick answers about our courses and mobile app access.</p>
-
-          <div className="space-y-3">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-[#11161D] border border-white/10 rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-white"
-                >
-                  <span>{faq.q}</span>
-                  <ChevronDown className={`w-4 h-4 text-[#00E5FF] transition-transform ${openFaq === idx ? 'rotate-180' : ''}`} />
-                </button>
-                {openFaq === idx && (
-                  <div className="px-5 pb-5 text-xs text-[#9AA4B2] leading-relaxed border-t border-white/5 pt-3">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ================= CONTACT & SUPPORT ================= */}
-        <section id="contact" className="py-20 bg-[#0D1117] border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <span className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider block mb-2">24/7 Support</span>
-                <h2 className="text-3xl font-black text-white mb-4">Get in Touch with VoltClass</h2>
-                <p className="text-xs text-[#9AA4B2] leading-relaxed mb-8">
-                  Have questions about course admissions, payment methods, or app setup? Send us a message and our support team will respond shortly.
-                </p>
-
-                <div className="space-y-4 text-xs text-[#9AA4B2]">
-                  <div className="flex items-center gap-3 bg-[#11161D] p-4 rounded-xl border border-white/5">
-                    <Mail className="w-5 h-5 text-[#00E5FF]" />
-                    <span>support@voltclass.com</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-[#11161D] p-4 rounded-xl border border-white/5">
-                    <Phone className="w-5 h-5 text-emerald-400" />
-                    <span>+91 98765 43210 (Mon–Sat, 10 AM–7 PM)</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-[#11161D] p-4 rounded-xl border border-white/5">
-                    <MessageSquare className="w-5 h-5 text-purple-400" />
-                    <span>Instant AI Doubt Tokens Available 24/7 Inside App</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Form */}
-              <div className="bg-[#11161D] border border-white/10 rounded-3xl p-8 shadow-xl">
-                {contactSubmitted ? (
-                  <div className="text-center py-12">
-                    <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-                      ✓
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">Message Sent!</h3>
-                    <p className="text-xs text-[#9AA4B2]">Thank you! Our support team will get back to you shortly.</p>
-                  </div>
-                ) : (
-                  <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setContactSubmitted(true);
-                    }}
-                    className="space-y-4"
-                  >
-                    <div>
-                      <label className="text-[10px] font-bold text-[#9AA4B2] uppercase block mb-1">Your Full Name</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Rohan Sharma"
-                        className="w-full bg-[#07090C] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#00E5FF]"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] font-bold text-[#9AA4B2] uppercase block mb-1">Email Address</label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="rohan@gmail.com"
-                        className="w-full bg-[#07090C] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#00E5FF]"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] font-bold text-[#9AA4B2] uppercase block mb-1">Message / Query</label>
-                      <textarea
-                        rows={4}
-                        required
-                        placeholder="I have a question regarding course access or mobile enrollment..."
-                        className="w-full bg-[#07090C] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#00E5FF]"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-[#00E5FF] text-[#07090C] font-extrabold text-xs py-3.5 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.3)] hover:bg-[#33EBFF] transition-all"
-                    >
-                      Send Message
-                    </button>
-                  </form>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-[#07090C] border-t border-white/10 py-12 text-xs text-[#9AA4B2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-white font-bold">⚡ VoltClass</span>
-            <span>— Charge Your Rank</span>
-          </div>
-          <p>© {new Date().getFullYear()} VoltClass. All rights reserved.</p>
         </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer style={{ padding: '32px 24px', textAlign: 'center', fontSize: '12px', color: '#9AA4B2', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        © {new Date().getFullYear()} VoltClass. All rights reserved. • Charge Your Rank ⚡
       </footer>
     </div>
   );
