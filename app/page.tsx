@@ -19,8 +19,7 @@ import {
   MessageSquare,
   FileText,
   BarChart2,
-  Sparkles,
-  ShieldCheck
+  Sparkles
 } from 'lucide-react';
 
 export default function SingleLandingPage() {
@@ -44,8 +43,8 @@ export default function SingleLandingPage() {
       ],
       badge: 'Most Popular',
       accentColor: '#059669',
-      badgeBg: '#ECFDF5',
-      badgeText: '#047857',
+      badgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      btnColor: 'bg-emerald-600 hover:bg-emerald-700 text-white',
     },
     {
       title: 'Lakshya JEE Main & Advanced',
@@ -62,8 +61,8 @@ export default function SingleLandingPage() {
       ],
       badge: 'Best Value',
       accentColor: '#0284C7',
-      badgeBg: '#E0F2FE',
-      badgeText: '#0369A1',
+      badgeBg: 'bg-sky-50 text-sky-700 border-sky-200',
+      btnColor: 'bg-blue-600 hover:bg-blue-700 text-white',
     },
     {
       title: 'Shikhar Rank Booster',
@@ -80,54 +79,54 @@ export default function SingleLandingPage() {
       ],
       badge: 'Intensive',
       accentColor: '#7C3AED',
-      badgeBg: '#F3E8FF',
-      badgeText: '#6B21A8',
+      badgeBg: 'bg-purple-50 text-purple-700 border-purple-200',
+      btnColor: 'bg-purple-600 hover:bg-purple-700 text-white',
     },
   ];
 
   const appFeatures = [
     {
-      icon: <Sliders size={22} color="#0284C7" />,
+      icon: <Sliders className="w-5 h-5 text-blue-600" />,
       title: 'DIY Practice Engine',
-      desc: 'Pick specific subjects, select chapters & topics, filter by question type (Numerical, Assertion-Reason, Match Column), and set question limits with equal topic balance.',
-      bgColor: '#E0F2FE',
+      desc: 'Pick specific subjects, chapters, and topics. Filter by Numerical, Assertion-Reason, or Match Column with equal topic balance.',
+      bgColor: 'bg-blue-50',
     },
     {
-      icon: <Layers size={22} color="#059669" />,
+      icon: <Layers className="w-5 h-5 text-emerald-600" />,
       title: '3D Smart Flashcards',
-      desc: 'Interactive flip cards with formula highlights, category badges, and LaTeX math equations directly synced from private storage buckets.',
-      bgColor: '#ECFDF5',
+      desc: 'Interactive flip cards with formula highlights, category badges, and LaTeX math equations synced from private storage.',
+      bgColor: 'bg-emerald-50',
     },
     {
-      icon: <Brain size={22} color="#7C3AED" />,
+      icon: <Brain className="w-5 h-5 text-purple-600" />,
       title: 'AI Doubt Resolution',
       desc: '24/7 instant step-by-step doubt explanations and follow-up Q&A assistance in English or Romanized Hinglish.',
-      bgColor: '#F3E8FF',
+      bgColor: 'bg-purple-50',
     },
     {
-      icon: <FileText size={22} color="#D97706" />,
-      title: 'Daily Practice Sheets & PYQs',
-      desc: 'Comprehensive topic-wise practice sheets, chapter quick notes, and previous year exam questions with live solution breakdowns.',
-      bgColor: '#FEF3C7',
+      icon: <FileText className="w-5 h-5 text-amber-600" />,
+      title: 'Daily Practice & PYQs',
+      desc: 'Topic-wise practice sheets, chapter quick notes, and previous year exam questions with live solution breakdowns.',
+      bgColor: 'bg-amber-50',
     },
     {
-      icon: <BarChart2 size={22} color="#E11D48" />,
+      icon: <BarChart2 className="w-5 h-5 text-rose-600" />,
       title: 'Deep Speed Analytics',
       desc: 'Interactive 5-column question status matrix, time-elapsed per question, and topic-wise accuracy analytics.',
-      bgColor: '#FFE4E6',
+      bgColor: 'bg-rose-50',
     },
     {
-      icon: <Sparkles size={22} color="#0284C7" />,
+      icon: <Sparkles className="w-5 h-5 text-sky-600" />,
       title: 'Smart Revision Engine',
       desc: 'AI-driven weak area tracking that automatically reorganizes missed concepts into focused revision sets.',
-      bgColor: '#E0F2FE',
+      bgColor: 'bg-sky-50',
     },
   ];
 
   const faqs = [
     {
       q: 'How does the VoltClass mobile app work?',
-      a: 'VoltClass is a pure-practice and rank-boosting platform. You can configure custom question sets, practice with 3D smart flashcards, track speed and precision, and resolve doubts instantly using our AI engine.',
+      a: 'VoltClass is a pure practice and rank-boosting platform. Configure custom question sets, review 3D flashcards, track speed, and resolve doubts instantly using our AI engine.',
     },
     {
       q: 'Is the course content aligned with the latest NTA syllabus?',
@@ -144,127 +143,178 @@ export default function SingleLandingPage() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#F8FAFC', color: '#0F172A', minHeight: '100vh', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-      
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
       {/* ================= HEADER ================= */}
-      <header style={{ position: 'sticky', top: 0, zIndex: 50, backgroundColor: 'rgba(255, 255, 255, 0.9)', borderBottom: '1px solid #E2E8F0', backdropFilter: 'blur(12px)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #0284C7, #2563EB)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontWeight: '900', fontSize: '20px', boxShadow: '0 4px 14px rgba(37, 99, 235, 0.3)' }}>
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2.5">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-sky-500 flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-md shadow-blue-500/20">
               ⚡
             </div>
             <div>
-              <span style={{ fontSize: '22px', fontWeight: '900', color: '#0F172A', letterSpacing: '-0.5px' }}>Volt<span style={{ color: '#2563EB' }}>Class</span></span>
-              <span style={{ display: 'block', fontSize: '9px', fontWeight: '800', color: '#64748B', letterSpacing: '1px', textTransform: 'uppercase', marginTop: '-4px' }}>Charge Your Rank</span>
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900">
+                Volt<span className="text-blue-600">Class</span>
+              </span>
+              <span className="text-[9px] font-extrabold text-slate-500 tracking-wider uppercase block -mt-1">
+                Charge Your Rank
+              </span>
             </div>
-          </div>
+          </a>
 
-          <nav style={{ display: 'flex', gap: '28px', fontSize: '13px', fontWeight: '700' }}>
-            <a href="#about" style={{ color: '#475569', textDecoration: 'none' }}>App Details</a>
-            <a href="#features" style={{ color: '#475569', textDecoration: 'none' }}>Features</a>
-            <a href="#courses" style={{ color: '#475569', textDecoration: 'none' }}>Batches & Fees</a>
-            <a href="#download" style={{ color: '#475569', textDecoration: 'none' }}>Download App</a>
-            <a href="#contact" style={{ color: '#475569', textDecoration: 'none' }}>Contact</a>
+          {/* Desktop Links */}
+          <nav className="hidden md:flex items-center gap-8 text-xs font-bold text-slate-600">
+            <a href="#about" className="hover:text-blue-600 transition-colors">App Details</a>
+            <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
+            <a href="#courses" className="hover:text-blue-600 transition-colors">Batches & Fees</a>
+            <a href="#download" className="hover:text-blue-600 transition-colors">Download App</a>
+            <a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a>
           </nav>
 
-          <a href="#download" style={{ backgroundColor: '#2563EB', color: '#FFF', padding: '10px 22px', borderRadius: '12px', fontWeight: '800', fontSize: '12px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', boxShadow: '0 4px 14px rgba(37, 99, 235, 0.3)' }}>
-            <Smartphone size={16} /> Get Mobile App
-          </a>
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="#download"
+              className="bg-blue-600 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl shadow-md shadow-blue-500/20 hover:bg-blue-700 transition-all flex items-center gap-2"
+            >
+              <Smartphone className="w-4 h-4" />
+              <span>Get Mobile App</span>
+            </a>
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-slate-700 p-2 rounded-lg hover:bg-slate-100 focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6 text-blue-600" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-b border-slate-200 px-5 py-4 space-y-3 animate-in slide-in-from-top-2">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-700 py-2 border-b border-slate-100">App Details</a>
+            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-700 py-2 border-b border-slate-100">Features</a>
+            <a href="#courses" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-700 py-2 border-b border-slate-100">Batches & Fees</a>
+            <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-700 py-2 border-b border-slate-100">Download App</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-700 py-2">Contact Support</a>
+            <a
+              href="#download"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full bg-blue-600 text-white font-extrabold text-xs py-3 rounded-xl flex items-center justify-center gap-2 mt-2 shadow-md"
+            >
+              <Smartphone className="w-4 h-4" />
+              <span>Get App on Android</span>
+            </a>
+          </div>
+        )}
       </header>
 
       <main>
         {/* ================= HERO SECTION ================= */}
-        <section id="about" style={{ padding: '70px 24px 60px', textAlign: 'center', maxWidth: '1080px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: '#EFF6FF', border: '1px solid #BFDBFE', padding: '6px 18px', borderRadius: '20px', fontSize: '12px', color: '#1D4ED8', fontWeight: '800', marginBottom: '24px' }}>
-            <Zap size={14} fill="#1D4ED8" /> High-Performance NEET & JEE Practice Engine
+        <section id="about" className="pt-8 sm:pt-14 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full text-xs font-extrabold text-blue-700 mb-5">
+            <Zap className="w-3.5 h-3.5 fill-blue-700" />
+            <span>High-Performance NEET & JEE Practice Engine</span>
           </div>
 
-          <h1 style={{ fontSize: '52px', fontWeight: '900', lineHeight: '1.12', marginBottom: '20px', color: '#0F172A', letterSpacing: '-1px' }}>
-            Prepare Smarter. Practice Harder. <br />
-            <span style={{ background: 'linear-gradient(135deg, #2563EB, #0284C7, #059669)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight mb-4 sm:mb-6">
+            Prepare Smarter. Practice Harder.{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-emerald-600 block sm:inline">
               Charge Your Rank.
             </span>
           </h1>
 
-          <p style={{ color: '#475569', fontSize: '16px', lineHeight: '1.65', maxWidth: '720px', margin: '0 auto 36px', fontWeight: '500' }}>
+          <p className="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6 sm:mb-8 font-medium">
             A pure practice engine that plugs into your existing preparation and drives your score upward. Custom DIY exercise configurator, 3D smart flashcards, live velocity tracking, and instant AI doubt resolution.
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '52px' }}>
-            <a href="#download" style={{ backgroundColor: '#2563EB', color: '#FFF', padding: '15px 32px', borderRadius: '14px', fontWeight: '800', fontSize: '14px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', boxShadow: '0 8px 24px rgba(37, 99, 235, 0.35)' }}>
-              <Smartphone size={18} /> Get App on Android
+          {/* Action Buttons Stacked on Mobile */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14">
+            <a
+              href="#download"
+              className="w-full sm:w-auto bg-blue-600 text-white font-extrabold text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-xl shadow-lg shadow-blue-500/25 hover:bg-blue-700 transition-all flex items-center justify-center gap-2.5"
+            >
+              <Smartphone className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>Get App on Android</span>
             </a>
-            <a href="#courses" style={{ backgroundColor: '#FFF', color: '#0F172A', border: '1px solid #CBD5E1', padding: '15px 32px', borderRadius: '14px', fontWeight: '800', fontSize: '14px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-              View Batches & Fees <ArrowRight size={16} color="#2563EB" />
+            <a
+              href="#courses"
+              className="w-full sm:w-auto bg-white text-slate-800 border border-slate-300 font-bold text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-xl shadow-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+            >
+              <span>View Batches & Fees</span>
+              <ArrowRight className="w-4 h-4 text-blue-600" />
             </a>
           </div>
 
-          {/* APP DASHBOARD GRAPHICS PREVIEW */}
-          <div style={{ backgroundColor: '#FFF', border: '1px solid #E2E8F0', borderRadius: '24px', padding: '28px', textAlign: 'left', boxShadow: '0 20px 50px rgba(15, 23, 42, 0.08)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #F1F5F9', paddingBottom: '16px', marginBottom: '24px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#EF4444', display: 'inline-block' }}></span>
-                <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#F59E0B', display: 'inline-block' }}></span>
-                <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#10B981', display: 'inline-block' }}></span>
-                <span style={{ fontSize: '13px', color: '#64748B', fontWeight: '700', marginLeft: '8px' }}>VoltClass App Engine v2.4</span>
+          {/* APP DASHBOARD MOBILE PREVIEW CARD */}
+          <div className="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-left shadow-xl shadow-slate-200/50">
+            <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-slate-100 mb-4 sm:mb-6">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                <span className="text-[11px] sm:text-xs text-slate-500 font-bold ml-1">VoltClass App Engine</span>
               </div>
-              <span style={{ color: '#0284C7', fontSize: '12px', fontWeight: '800', backgroundColor: '#E0F2FE', padding: '4px 14px', borderRadius: '12px' }}>★ 4.9 Student Rating</span>
+              <span className="text-[10px] sm:text-xs font-extrabold text-sky-700 bg-sky-50 border border-sky-100 px-2.5 py-1 rounded-lg">
+                ★ 4.9 Student Rating
+              </span>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ backgroundColor: '#F8FAFC', padding: '16px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block', fontWeight: '800' }}>QUESTIONS SOLVED</span>
-                <span style={{ fontSize: '24px', fontWeight: '900', color: '#0F172A' }}>1,420+</span>
+            {/* 4 Metrics Grid (2x2 on Mobile, 4x1 on Desktop) */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 mb-4 sm:mb-6">
+              <div className="bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-100">
+                <span className="text-[9px] sm:text-[10px] text-slate-500 font-extrabold block uppercase mb-0.5">QUESTIONS SOLVED</span>
+                <span className="text-lg sm:text-2xl font-black text-slate-900">1,420+</span>
               </div>
-              <div style={{ backgroundColor: '#F8FAFC', padding: '16px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block', fontWeight: '800' }}>ACCURACY LEVEL</span>
-                <span style={{ fontSize: '24px', fontWeight: '900', color: '#059669' }}>88.4%</span>
+              <div className="bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-100">
+                <span className="text-[9px] sm:text-[10px] text-slate-500 font-extrabold block uppercase mb-0.5">ACCURACY LEVEL</span>
+                <span className="text-lg sm:text-2xl font-black text-emerald-600">88.4%</span>
               </div>
-              <div style={{ backgroundColor: '#F8FAFC', padding: '16px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block', fontWeight: '800' }}>DOUBT TOKENS</span>
-                <span style={{ fontSize: '24px', fontWeight: '900', color: '#0284C7' }}>52 / 60</span>
+              <div className="bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-100">
+                <span className="text-[9px] sm:text-[10px] text-slate-500 font-extrabold block uppercase mb-0.5">DOUBT TOKENS</span>
+                <span className="text-lg sm:text-2xl font-black text-blue-600">52 / 60</span>
               </div>
-              <div style={{ backgroundColor: '#F8FAFC', padding: '16px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block', fontWeight: '800' }}>TARGET RANK</span>
-                <span style={{ fontSize: '24px', fontWeight: '900', color: '#D97706' }}>Top 500</span>
+              <div className="bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-100">
+                <span className="text-[9px] sm:text-[10px] text-slate-500 font-extrabold block uppercase mb-0.5">TARGET RANK</span>
+                <span className="text-lg sm:text-2xl font-black text-amber-600">Top 500</span>
               </div>
             </div>
 
-            {/* 5 COLUMN STATUS MATRIX */}
-            {/* 5 COLUMN STATUS MATRIX */}
-<div style={{ backgroundColor: '#F8FAFC', padding: '20px', borderRadius: '18px', border: '1px solid #E2E8F0' }}>
-  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-    <span style={{ fontSize: '12px', fontWeight: '800', color: '#1D4ED8', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Live Question Status Matrix (5 per row)</span>
-    <span style={{ fontSize: '12px', fontWeight: '700', color: '#059669' }}>Timer: 01:45</span>
-  </div>
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
-    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#DCFCE7', border: '1px solid #86EFAC', color: '#166534', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>1 ✓</div>
-    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#DCFCE7', border: '1px solid #86EFAC', color: '#166534', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>2 ✓</div>
-    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#FEE2E2', border: '1px solid #FCA5A5', color: '#991B1B', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>3 ✗</div>
-    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#E0F2FE', border: '1px solid #38BDF8', color: '#0369A1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>4 •</div>
-    <div style={{ height: '38px', borderRadius: '10px', backgroundColor: '#FFF', border: '1px solid #CBD5E1', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '13px' }}>5</div>
-  </div>
-</div>
+            {/* 5 Column Status Matrix */}
+            <div className="bg-slate-50 p-3.5 sm:p-5 rounded-xl border border-slate-200">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[10px] sm:text-xs font-extrabold text-blue-700 uppercase tracking-wide">Live Question Status Matrix (5 per row)</span>
+                <span className="text-[10px] sm:text-xs font-bold text-emerald-600">Timer: 01:45</span>
+              </div>
+              <div className="grid grid-cols-5 gap-1.5 sm:gap-2.5">
+                <div className="h-8 sm:h-9 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-800 flex items-center justify-center text-xs font-bold">1 ✓</div>
+                <div className="h-8 sm:h-9 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-800 flex items-center justify-center text-xs font-bold">2 ✓</div>
+                <div className="h-8 sm:h-9 rounded-lg bg-rose-100 border border-rose-300 text-rose-800 flex items-center justify-center text-xs font-bold">3 ✗</div>
+                <div className="h-8 sm:h-9 rounded-lg bg-sky-100 border border-sky-300 text-sky-800 flex items-center justify-center text-xs font-bold animate-pulse">4 •</div>
+                <div className="h-8 sm:h-9 rounded-lg bg-white border border-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold">5</div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ================= APP FEATURES SECTION ================= */}
-        <section id="features" style={{ backgroundColor: '#FFF', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0', padding: '80px 24px' }}>
-          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', marginBottom: '52px' }}>
-              <span style={{ color: '#2563EB', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px' }}>Complete System Overview</span>
-              <h2 style={{ fontSize: '38px', fontWeight: '900', color: '#0F172A', marginTop: '8px' }}>Engineered For Score Progression</h2>
+        {/* ================= FEATURES SECTION ================= */}
+        <section id="features" className="py-12 sm:py-20 bg-white border-y border-slate-200">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+              <span className="text-xs font-extrabold text-blue-600 uppercase tracking-wider block mb-1">Complete System Overview</span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900">Engineered For Score Progression</h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            {/* 1 Column on Mobile, 3 Columns on Desktop */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {appFeatures.map((item, idx) => (
-                <div key={idx} style={{ backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '20px', padding: '28px', transition: 'all 0.2s' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '14px', backgroundColor: item.bgColor, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                <div key={idx} className="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 transition-all hover:border-slate-300">
+                  <div className={`w-10 h-10 rounded-xl ${item.bgColor} flex items-center justify-center mb-4`}>
                     {item.icon}
                   </div>
-                  <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#0F172A', marginBottom: '10px' }}>{item.title}</h3>
-                  <p style={{ fontSize: '13px', color: '#64748B', lineHeight: '1.6' }}>{item.desc}</p>
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -272,41 +322,53 @@ export default function SingleLandingPage() {
         </section>
 
         {/* ================= BATCHES & FEES ================= */}
-        <section id="courses" style={{ padding: '80px 24px', maxWidth: '1100px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '52px' }}>
-            <span style={{ color: '#2563EB', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px' }}>Structured Programs</span>
-            <h2 style={{ fontSize: '38px', fontWeight: '900', color: '#0F172A', marginTop: '8px' }}>Target Batches & Pricing</h2>
-            <p style={{ fontSize: '14px', color: '#64748B', marginTop: '8px' }}>Includes full access to the DIY practice engine, 3D smart flashcards, and AI doubt tokens.</p>
+        <section id="courses" className="py-12 sm:py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <span className="text-xs font-extrabold text-blue-600 uppercase tracking-wider block mb-1">Structured Programs</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 mb-2">Target Batches & Pricing</h2>
+            <p className="text-xs sm:text-sm text-slate-600 font-medium">Includes full access to the DIY practice engine, 3D smart flashcards, and AI doubt tokens.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          {/* 1 Column Stacked on Mobile, 3 Columns on Desktop */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {courses.map((course, idx) => (
-              <div key={idx} style={{ backgroundColor: '#FFF', border: `2px solid ${course.accentColor}`, borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(0,0,0,0.04)' }}>
+              <div
+                key={idx}
+                className="bg-white border-2 border-slate-200 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg shadow-slate-100 hover:border-blue-500 transition-all"
+              >
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                    <span style={{ color: course.badgeText, backgroundColor: course.badgeBg, padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: '800' }}>{course.exam}</span>
-                    <span style={{ fontSize: '11px', fontWeight: '700', color: '#64748B' }}>{course.target}</span>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase border ${course.badgeBg}`}>
+                      {course.exam}
+                    </span>
+                    <span className="text-[11px] font-bold text-slate-500">{course.target}</span>
                   </div>
 
-                  <h3 style={{ fontSize: '22px', fontWeight: '900', color: '#0F172A', marginBottom: '6px' }}>{course.title}</h3>
-                  <p style={{ fontSize: '12px', color: '#64748B', marginBottom: '24px', fontWeight: '600' }}>{course.subjects}</p>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">{course.title}</h3>
+                  <p className="text-xs font-bold text-slate-500 mb-5">{course.subjects}</p>
 
-                  <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '20px', marginBottom: '24px' }}>
-                    <span style={{ fontSize: '36px', fontWeight: '900', color: '#0F172A' }}>{course.price}</span>
-                    <span style={{ fontSize: '14px', color: '#94A3B8', textDecoration: 'line-through', marginLeft: '10px' }}>{course.originalPrice}</span>
-                    <span style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: '#059669', marginTop: '4px' }}>1 Year Full Access</span>
+                  <div className="border-b border-slate-100 pb-4 mb-5">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl font-black text-slate-900">{course.price}</span>
+                      <span className="text-sm text-slate-400 line-through">{course.originalPrice}</span>
+                    </div>
+                    <span className="text-xs font-bold text-emerald-600 block mt-1">1 Year Full Access</span>
                   </div>
 
-                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0' }}>
+                  <ul className="space-y-3 mb-6">
                     {course.features.map((feat, fIdx) => (
-                      <li key={fIdx} style={{ fontSize: '13px', color: '#334155', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '500' }}>
-                        <CheckCircle2 size={16} color={course.accentColor} /> {feat}
+                      <li key={fIdx} className="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                        <span>{feat}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <a href="#contact" style={{ backgroundColor: course.accentColor, color: '#FFF', padding: '14px', borderRadius: '14px', textAlign: 'center', fontWeight: '800', fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+                <a
+                  href="#contact"
+                  className={`w-full py-3.5 rounded-xl text-center font-extrabold text-xs shadow-md transition-all ${course.btnColor}`}
+                >
                   Enroll Now
                 </a>
               </div>
@@ -314,61 +376,73 @@ export default function SingleLandingPage() {
           </div>
         </section>
 
-        {/* ================= GOOGLE PLAY & APK DOWNLOAD ================= */}
-        <section id="download" style={{ backgroundColor: '#EFF6FF', borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE', padding: '80px 24px' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '48px' }}>
-            <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: '#DCFCE7', color: '#166534', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: '800', marginBottom: '12px' }}>
-                <Smartphone size={14} /> Official Android App
+        {/* ================= GOOGLE PLAY DOWNLOAD ================= */}
+        <section id="download" className="py-12 sm:py-20 bg-blue-50/70 border-y border-blue-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12">
+            <div className="max-w-xl text-center md:text-left">
+              <div className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[11px] font-extrabold mb-3">
+                <Smartphone className="w-3.5 h-3.5" />
+                <span>Official Mobile App</span>
               </div>
-              <h2 style={{ fontSize: '36px', fontWeight: '900', color: '#0F172A', marginTop: '8px', marginBottom: '16px' }}>Practice Anywhere on Android</h2>
-              <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.6', marginBottom: '32px' }}>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 mb-3">
+                Practice Anywhere on Android
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium">
                 Take timed mock exercises, review 3D smart flashcards, and solve doubts right on your smartphone. Available now on Android.
               </p>
 
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <button onClick={() => alert('Opening Play Store...')} style={{ backgroundColor: '#0F172A', border: 'none', padding: '12px 26px', borderRadius: '16px', color: '#FFF', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px', boxShadow: '0 8px 20px rgba(15,23,42,0.2)' }}>
-                  <span style={{ fontSize: '20px' }}>▶</span>
-                  <div style={{ textAlign: 'left' }}>
-                    <span style={{ fontSize: '9px', color: '#94A3B8', display: 'block', textTransform: 'uppercase', letterSpacing: '0.5px' }}>GET IT ON</span>
-                    <span style={{ fontSize: '14px', fontWeight: '800' }}>Google Play</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3">
+                <button
+                  onClick={() => alert('Opening Play Store...')}
+                  className="w-full sm:w-auto bg-slate-900 text-white border border-slate-800 px-6 py-3 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-800 transition-all shadow-md"
+                >
+                  <span className="text-lg">▶</span>
+                  <div className="text-left">
+                    <span className="text-[8px] text-slate-400 font-extrabold uppercase block tracking-wider">GET IT ON</span>
+                    <span className="text-xs font-black">Google Play</span>
                   </div>
                 </button>
 
-                <button onClick={() => alert('Starting APK download...')} style={{ backgroundColor: '#FFF', border: '1px solid #CBD5E1', padding: '12px 26px', borderRadius: '16px', color: '#0F172A', fontWeight: '800', fontSize: '13px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                  <Download size={16} color="#2563EB" /> Download Direct APK
+                <button
+                  onClick={() => alert('Starting APK download...')}
+                  className="w-full sm:w-auto bg-white border border-slate-300 px-6 py-3 rounded-2xl flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 hover:bg-slate-50 transition-all shadow-sm"
+                >
+                  <Download className="w-4 h-4 text-blue-600" />
+                  <span>Download Direct APK</span>
                 </button>
               </div>
             </div>
 
-            <div style={{ backgroundColor: '#FFF', border: '1px solid #E2E8F0', borderRadius: '24px', padding: '32px', textAlign: 'center', minWidth: '280px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
-              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: '#E0F2FE', color: '#0284C7', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-                <Zap size={28} fill="#0284C7" />
+            <div className="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-6 text-center w-full max-w-xs shadow-lg shadow-slate-200/50">
+              <div className="w-14 h-14 rounded-2xl bg-sky-50 text-blue-600 flex items-center justify-center mx-auto mb-3 border border-sky-100">
+                <Zap className="w-7 h-7 fill-blue-600" />
               </div>
-              <h4 style={{ fontSize: '18px', fontWeight: '900', color: '#0F172A', marginBottom: '4px' }}>VoltClass App</h4>
-              <p style={{ fontSize: '12px', color: '#64748B', marginBottom: '16px', fontWeight: '600' }}>v2.4.0 • 100% Ad-Free • 24MB</p>
-              <span style={{ color: '#15803D', fontSize: '12px', fontWeight: '800', backgroundColor: '#DCFCE7', padding: '6px 16px', borderRadius: '20px' }}>✓ Verified Safe</span>
+              <h4 className="text-base font-black text-slate-900 mb-0.5">VoltClass App</h4>
+              <p className="text-xs text-slate-500 font-semibold mb-3">v2.4.0 • 100% Ad-Free • 24MB</p>
+              <span className="inline-block text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-4 py-1.5 rounded-full">
+                ✓ Verified Safe
+              </span>
             </div>
           </div>
         </section>
 
         {/* ================= FAQ SECTION ================= */}
-        <section style={{ padding: '80px 24px', maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '900', textAlign: 'center', color: '#0F172A', marginBottom: '8px' }}>Frequently Asked Questions</h2>
-          <p style={{ fontSize: '13px', color: '#64748B', textAlign: 'center', marginBottom: '40px' }}>Quick answers about our courses and mobile app access.</p>
+        <section className="py-12 sm:py-20 max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl sm:text-3xl font-black text-center text-slate-900 mb-2">Frequently Asked Questions</h2>
+          <p className="text-xs sm:text-sm text-slate-600 text-center mb-8 font-medium">Quick answers about our courses and mobile app access.</p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div className="space-y-3">
             {faqs.map((faq, idx) => (
-              <div key={idx} style={{ backgroundColor: '#FFF', border: '1px solid #E2E8F0', borderRadius: '16px', overflow: 'hidden' }}>
+              <div key={idx} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  style={{ width: '100%', padding: '18px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontWeight: '800', fontSize: '14px', color: '#0F172A', background: 'none', border: 'none', cursor: 'pointer' }}
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-slate-900 focus:outline-none"
                 >
                   <span>{faq.q}</span>
-                  <ChevronDown size={18} color="#2563EB" style={{ transform: openFaq === idx ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
+                  <ChevronDown className={`w-4 h-4 text-blue-600 transition-transform ${openFaq === idx ? 'rotate-180' : ''}`} />
                 </button>
                 {openFaq === idx && (
-                  <div style={{ padding: '0 20px 20px', fontSize: '13px', color: '#475569', lineHeight: '1.6', borderTop: '1px solid #F1F5F9', paddingTop: '12px' }}>
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3 font-medium">
                     {faq.a}
                   </div>
                 )}
@@ -378,66 +452,87 @@ export default function SingleLandingPage() {
         </section>
 
         {/* ================= CONTACT & SUPPORT ================= */}
-        <section id="contact" style={{ backgroundColor: '#FFF', borderTop: '1px solid #E2E8F0', padding: '80px 24px' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px' }}>
-            <div>
-              <span style={{ color: '#2563EB', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px' }}>24/7 Support</span>
-              <h2 style={{ fontSize: '34px', fontWeight: '900', color: '#0F172A', marginTop: '8px', marginBottom: '16px' }}>Get in Touch with VoltClass</h2>
-              <p style={{ fontSize: '13px', color: '#64748B', lineHeight: '1.6', marginBottom: '32px' }}>
-                Have questions about course admissions, payment methods, or app setup? Send us a message and our support team will respond shortly.
-              </p>
+        <section id="contact" className="py-12 sm:py-20 bg-white border-t border-slate-200">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+              <div>
+                <span className="text-xs font-extrabold text-blue-600 uppercase tracking-wider block mb-1">24/7 Support</span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 mb-3">Get in Touch with VoltClass</h2>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium">
+                  Have questions about course admissions, payment methods, or app setup? Send us a message and our support team will respond shortly.
+                </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F8FAFC', padding: '16px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
-                  <Mail size={20} color="#2563EB" />
-                  <span style={{ fontSize: '13px', fontWeight: '700', color: '#334155' }}>support@voltclass.com</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F8FAFC', padding: '16px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
-                  <Phone size={20} color="#059669" />
-                  <span style={{ fontSize: '13px', fontWeight: '700', color: '#334155' }}>+91 98765 43210 (Mon–Sat, 10 AM–7 PM)</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F8FAFC', padding: '16px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
-                  <MessageSquare size={20} color="#7C3AED" />
-                  <span style={{ fontSize: '13px', fontWeight: '700', color: '#334155' }}>Instant AI Doubt Tokens Available 24/7 Inside App</span>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 bg-slate-50 p-3.5 sm:p-4 rounded-xl border border-slate-200 text-xs font-bold text-slate-800">
+                    <Mail className="w-4 h-4 text-blue-600 shrink-0" />
+                    <span>support@voltclass.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 bg-slate-50 p-3.5 sm:p-4 rounded-xl border border-slate-200 text-xs font-bold text-slate-800">
+                    <Phone className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>+91 98765 43210 (Mon–Sat, 10 AM–7 PM)</span>
+                  </div>
+                  <div className="flex items-center gap-3 bg-slate-50 p-3.5 sm:p-4 rounded-xl border border-slate-200 text-xs font-bold text-slate-800">
+                    <MessageSquare className="w-4 h-4 text-purple-600 shrink-0" />
+                    <span>Instant AI Doubt Tokens Available 24/7 Inside App</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div style={{ backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '24px', padding: '32px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
-              {contactSubmitted ? (
-                <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#DCFCE7', color: '#166534', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', fontWeight: '900', fontSize: '20px' }}>
-                    ✓
+              {/* Form */}
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-md">
+                {contactSubmitted ? (
+                  <div className="text-center py-8">
+                    <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-3 font-black text-xl">
+                      ✓
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 mb-1">Message Sent!</h3>
+                    <p className="text-xs text-slate-600 font-medium">Thank you! Our support team will get back to you shortly.</p>
                   </div>
-                  <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#0F172A', marginBottom: '8px' }}>Message Sent!</h3>
-                  <p style={{ fontSize: '13px', color: '#64748B' }}>Thank you! Our support team will get back to you shortly.</p>
-                </div>
-              ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setContactSubmitted(true); }} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <div>
-                    <label style={{ fontSize: '11px', fontWeight: '800', color: '#475569', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Your Full Name</label>
-                    <input type="text" required placeholder="Rohan Sharma" style={{ width: '100%', backgroundColor: '#FFF', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '12px 16px', fontSize: '13px', color: '#0F172A', outline: 'none' }} />
-                  </div>
-                  <div>
-                    <label style={{ fontSize: '11px', fontWeight: '800', color: '#475569', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Email Address</label>
-                    <input type="email" required placeholder="rohan@gmail.com" style={{ width: '100%', backgroundColor: '#FFF', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '12px 16px', fontSize: '13px', color: '#0F172A', outline: 'none' }} />
-                  </div>
-                  <div>
-                    <label style={{ fontSize: '11px', fontWeight: '800', color: '#475569', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Message / Query</label>
-                    <textarea rows={4} required placeholder="I have a question regarding course access or mobile enrollment..." style={{ width: '100%', backgroundColor: '#FFF', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '12px 16px', fontSize: '13px', color: '#0F172A', outline: 'none' }} />
-                  </div>
-                  <button type="submit" style={{ backgroundColor: '#2563EB', color: '#FFF', border: 'none', padding: '14px', borderRadius: '12px', fontWeight: '800', fontSize: '13px', cursor: 'pointer', boxShadow: '0 4px 14px rgba(37,99,235,0.3)' }}>
-                    Send Message
-                  </button>
-                </form>
-              )}
+                ) : (
+                  <form onSubmit={(e) => { e.preventDefault(); setContactSubmitted(true); }} className="space-y-3.5">
+                    <div>
+                      <label className="text-[10px] font-extrabold text-slate-500 uppercase block mb-1">Your Full Name</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Rohan Sharma"
+                        className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-medium"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-extrabold text-slate-500 uppercase block mb-1">Email Address</label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="rohan@gmail.com"
+                        className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-medium"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-extrabold text-slate-500 uppercase block mb-1">Message / Query</label>
+                      <textarea
+                        rows={3}
+                        required
+                        placeholder="I have a question regarding course access or mobile enrollment..."
+                        className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-medium"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-blue-600 text-white font-extrabold text-xs py-3 rounded-xl shadow-md shadow-blue-500/20 hover:bg-blue-700 transition-all"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </section>
       </main>
 
       {/* ================= FOOTER ================= */}
-      <footer style={{ padding: '32px 24px', textAlign: 'center', fontSize: '12px', color: '#64748B', borderTop: '1px solid #E2E8F0', backgroundColor: '#FFF' }}>
+      <footer className="py-8 bg-white border-t border-slate-200 text-center text-xs text-slate-500 font-medium">
         © {new Date().getFullYear()} VoltClass. All rights reserved. • Charge Your Rank ⚡
       </footer>
     </div>
