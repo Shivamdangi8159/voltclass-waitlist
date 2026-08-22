@@ -90,7 +90,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
               <ul className="space-y-2.5">
                 {course.features.map((feat, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-[#0B0F14]">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#00A3FF] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}

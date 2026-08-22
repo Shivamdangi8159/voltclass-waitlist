@@ -40,7 +40,7 @@ export const DashboardMockup: React.FC = () => {
         </div>
         <div className="bg-white border border-black/5 rounded-xl p-3 text-center">
           <span className="text-[11px] text-[#5B6472] block mb-1">Overall Accuracy</span>
-          <span className="text-xl font-black text-emerald-400">84.2%</span>
+          <span className="text-xl font-black text-[#00A3FF]">84.2%</span>
         </div>
         <div className="bg-white border border-black/5 rounded-xl p-3 text-center">
           <span className="text-[11px] text-[#5B6472] block mb-1">Doubt Tokens</span>
@@ -85,8 +85,8 @@ export const DashboardMockup: React.FC = () => {
             Question Status Matrix (5 per row)
           </span>
           <div className="grid grid-cols-5 gap-2">
-            <div className="h-7 rounded-lg bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center text-xs font-bold">1 ✓</div>
-            <div className="h-7 rounded-lg bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center text-xs font-bold">2 ✓</div>
+            <div className="h-7 rounded-lg bg-[#00A3FF]/20 border border-[#00A3FF] text-[#00A3FF] flex items-center justify-center text-xs font-bold">1 ✓</div>
+            <div className="h-7 rounded-lg bg-[#00A3FF]/20 border border-[#00A3FF] text-[#00A3FF] flex items-center justify-center text-xs font-bold">2 ✓</div>
             <div className="h-7 rounded-lg bg-rose-500/20 border border-rose-500 text-rose-400 flex items-center justify-center text-xs font-bold">3 ✗</div>
             <div className="h-7 rounded-lg bg-[#00E5FF]/20 border border-[#00E5FF] text-[#00E5FF] flex items-center justify-center text-xs font-bold animate-pulse">4 •</div>
             <div className="h-7 rounded-lg bg-black/5 border border-black/10 text-[#5B6472] flex items-center justify-center text-xs font-bold">5</div>

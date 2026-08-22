@@ -149,13 +149,13 @@ export default function LandingPage() {
           </div>
 
           <div className="relative flex justify-center items-end gap-4 max-w-3xl mx-auto">
-            <div className="hidden sm:block opacity-75 max-w-[200px]">
+            <div className="hidden sm:block opacity-95 max-w-[200px]">
               <PhoneMock label="Home Dashboard" src="/screenshots/home.png" />
             </div>
             <div className="max-w-[260px] z-10">
               <PhoneMock label="Practice Configurator" src="/screenshots/practice-configurator.png" />
             </div>
-            <div className="hidden sm:block opacity-75 max-w-[200px]">
+            <div className="hidden sm:block opacity-95 max-w-[200px]">
               <PhoneMock label="Smart Flashcards" src="/screenshots/flashcards.png" />
             </div>
           </div>

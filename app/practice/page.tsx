@@ -449,7 +449,7 @@ export default function PracticePage() {
               <div className="text-xs font-extrabold text-[#0B0F14]">
                 Question <span className="text-[#00E5FF]">{currentIndex + 1}</span> of {quizQuestions.length}
               </div>
-              <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
+              <span className="text-[10px] font-bold text-[#00A3FF] bg-[#00A3FF]/10 px-2.5 py-1 rounded-md border border-[#00A3FF]/20">
                 {quizQuestions[currentIndex].difficulty}
               </span>
             </div>
@@ -511,7 +511,7 @@ export default function PracticePage() {
                         isCurrent
                           ? 'border-[#00E5FF] text-[#00E5FF] bg-[#00E5FF]/10 ring-2 ring-[#00E5FF]/30'
                           : isAnswered
-                          ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-400'
+                          ? 'bg-[#00A3FF]/20 border-[#00A3FF]/50 text-[#00A3FF]'
                           : 'bg-black/5 border-black/10 text-[#5B6472]'
                       }`}
                     >
@@ -542,7 +542,7 @@ export default function PracticePage() {
               ) : (
                 <button
                   onClick={finishQuiz}
-                  className="bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs px-6 py-3 rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.3)] flex items-center gap-1.5"
+                  className="bg-[#00A3FF] hover:bg-[#33B5FF] text-black font-extrabold text-xs px-6 py-3 rounded-xl shadow-[0_0_15px_rgba(0,163,255,0.3)] flex items-center gap-1.5"
                 >
                   Submit Exercise
                 </button>
@@ -570,13 +570,13 @@ export default function PracticePage() {
                   <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Accuracy
                   </span>
-                  <span className="text-2xl font-black text-emerald-400">{accuracyPct}%</span>
+                  <span className="text-2xl font-black text-[#00A3FF]">{accuracyPct}%</span>
                 </div>
                 <div className="bg-black/5 border border-black/10 rounded-xl p-3">
                   <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Correct
                   </span>
-                  <span className="text-2xl font-black text-emerald-400">{correctCount}</span>
+                  <span className="text-2xl font-black text-[#00A3FF]">{correctCount}</span>
                 </div>
                 <div className="bg-black/5 border border-black/10 rounded-xl p-3">
                   <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
@@ -616,7 +616,7 @@ export default function PracticePage() {
                             isSkipped
                               ? 'bg-amber-400/10 text-amber-300 border border-amber-400/20'
                               : isCorrect
-                              ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                              ? 'bg-sky-500/10 text-sky-400 border border-sky-500/20'
                               : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
                           }`}
                         >
@@ -631,13 +631,13 @@ export default function PracticePage() {
                       <div className="text-xs space-y-1 pt-1">
                         <div className="text-[#5B6472]">
                           Your Selection:{' '}
-                          <span className={isCorrect ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold'}>
+                          <span className={isCorrect ? 'text-[#00A3FF] font-bold' : 'text-rose-400 font-bold'}>
                             {q.selectedAnswer || 'None'}
                           </span>
                         </div>
                         <div className="text-[#5B6472]">
                           Correct Answer:{' '}
-                          <span className="text-emerald-400 font-bold">{q.correctAnswer}</span>
+                          <span className="text-[#00A3FF] font-bold">{q.correctAnswer}</span>
                         </div>
                       </div>
 

@@ -46,7 +46,7 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
         <div className="border-t border-black/5 pt-4 mb-6 space-y-2">
           {course.features.slice(0, 3).map((feat, idx) => (
             <div key={idx} className="flex items-center gap-2 text-xs text-[#0B0F14]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#00A3FF] shrink-0" />
               <span className="truncate">{feat}</span>
             </div>
           ))}
