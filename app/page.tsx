@@ -102,7 +102,7 @@ const faqTeaser = FAQS_DATA.slice(0, 4);
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#00E5FF] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-black">
       <Navbar />
 
       <main>
@@ -110,11 +110,11 @@ export default function LandingPage() {
         <section id="about" className="relative pt-40 pb-20 px-4 text-center overflow-hidden">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-[#00E5FF]/20 blur-[100px]"
+            className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-[#2563EB]/20 blur-[100px]"
           />
 
           <div className="relative max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-2 bg-[#00E5FF]/10 border border-[#00E5FF]/20 text-[#00E5FF] px-4 py-1.5 rounded-full text-xs font-bold mb-6">
+            <span className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] px-4 py-1.5 rounded-full text-xs font-bold mb-6">
               <Zap className="w-3.5 h-3.5" /> Built for NEET &amp; JEE, not general studying
             </span>
 
@@ -123,7 +123,7 @@ export default function LandingPage() {
               <br />
               Practice harder.
               <br />
-              <span className="text-[#00E5FF]">Charge your rank.</span>
+              <span className="text-[#2563EB]">Charge your rank.</span>
             </h1>
 
             <p className="text-[#5B6472] text-base leading-relaxed max-w-xl mx-auto mb-9">
@@ -135,7 +135,7 @@ export default function LandingPage() {
             <div className="flex flex-wrap justify-center gap-3 mb-16">
               <a
                 href="#waitlist"
-                className="inline-flex items-center gap-2 bg-[#00E5FF] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(0,229,255,0.35)] transition-all"
+                className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(0,229,255,0.35)] transition-all"
               >
                 <Smartphone className="w-4 h-4" /> Join the waitlist
               </a>
@@ -164,7 +164,7 @@ export default function LandingPage() {
         {/* ------------------------------------------------------ SHOWCASE */}
         <section id="showcase" className="max-w-5xl mx-auto px-4 py-24">
           <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="block text-xs font-extrabold uppercase tracking-widest text-[#00E5FF] mb-2">
+            <span className="block text-xs font-extrabold uppercase tracking-widest text-[#2563EB] mb-2">
               Inside the app
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0B0F14]">
@@ -198,7 +198,7 @@ export default function LandingPage() {
         <section id="features" className="bg-[#F6F8FA] border-y border-black/10 py-24 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center max-w-xl mx-auto mb-12">
-              <span className="block text-xs font-extrabold uppercase tracking-widest text-[#00E5FF] mb-2">
+              <span className="block text-xs font-extrabold uppercase tracking-widest text-[#2563EB] mb-2">
                 Complete system
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-[#0B0F14]">
@@ -210,9 +210,9 @@ export default function LandingPage() {
               {appFeatures.map((item) => (
                 <div
                   key={item.title}
-                  className="bg-white border border-black/10 hover:border-[#00E5FF]/40 rounded-2xl p-6 transition-all hover:-translate-y-1"
+                  className="bg-white border border-black/10 hover:border-[#2563EB]/40 rounded-2xl p-6 transition-all hover:-translate-y-1"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-[#00E5FF]/10 text-[#00E5FF] flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center mb-4">
                     {item.icon}
                   </div>
                   <h3 className="text-base font-bold text-[#0B0F14] mb-2">{item.title}</h3>
@@ -227,7 +227,7 @@ export default function LandingPage() {
         <section id="waitlist" className="py-24 px-4">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 bg-[#00E5FF]/10 border border-[#00E5FF]/20 text-[#00E5FF] px-3.5 py-1.5 rounded-full text-xs font-bold mb-4">
+              <span className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] px-3.5 py-1.5 rounded-full text-xs font-bold mb-4">
                 <Smartphone className="w-3.5 h-3.5" /> Early access
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-[#0B0F14] mb-4">
@@ -239,7 +239,7 @@ export default function LandingPage() {
               </p>
               <Link
                 href="/courses"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0F14] hover:text-[#00E5FF] transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0F14] hover:text-[#2563EB] transition-colors"
               >
                 See batches &amp; fees <ArrowRight className="w-4 h-4" />
               </Link>
@@ -254,7 +254,7 @@ export default function LandingPage() {
         {/* ------------------------------------------------------------ FAQ */}
         <section className="max-w-2xl mx-auto px-4 py-24">
           <div className="text-center mb-10">
-            <span className="block text-xs font-extrabold uppercase tracking-widest text-[#00E5FF] mb-2">
+            <span className="block text-xs font-extrabold uppercase tracking-widest text-[#2563EB] mb-2">
               Good to know
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0B0F14]">
@@ -267,7 +267,7 @@ export default function LandingPage() {
           <div className="text-center mt-8">
             <Link
               href="/faq"
-              className="inline-flex items-center gap-2 text-sm font-bold text-[#00E5FF] hover:text-[#0B0F14] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[#2563EB] hover:text-[#0B0F14] transition-colors"
             >
               View all FAQs <ArrowRight className="w-4 h-4" />
             </Link>
