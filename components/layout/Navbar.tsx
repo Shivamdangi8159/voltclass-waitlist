@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight, User } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +25,6 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Courses', href: '/courses' },
-    { name: 'Practice Engine', href: '/practice' },
     { name: 'How It Works', href: '/how-it-works' },
     { name: 'Help & FAQ', href: '/faq' },
   ];
@@ -78,13 +77,6 @@ export const Navbar = () => {
           {/* Action CTAs */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              href="/login"
-              className="text-xs font-semibold text-[#0B0F14] hover:text-[#00E5FF] px-4 py-2 rounded-lg hover:bg-black/5 transition-colors flex items-center gap-2"
-            >
-              <User className="w-3.5 h-3.5 text-[#00E5FF]" />
-              <span>Login</span>
-            </Link>
-            <Link
               href="/courses"
               className="text-xs font-bold bg-[#00E5FF] text-[#07090C] hover:bg-[#33EBFF] px-5 py-2.5 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all flex items-center gap-2 hover:scale-[1.02]"
             >
@@ -125,13 +117,6 @@ export const Navbar = () => {
             })}
           </nav>
           <div className="pt-2 flex flex-col gap-3">
-            <Link
-              href="/login"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-xl border border-black/10 text-[#0B0F14] font-semibold text-xs"
-            >
-              Login
-            </Link>
             <Link
               href="/courses"
               onClick={() => setMobileMenuOpen(false)}

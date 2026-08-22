@@ -81,6 +81,7 @@ const showcase = [
     title: 'Your syllabus, mapped and tracked',
     desc: 'Every chapter of your NEET or JEE syllabus, broken into topics with clear coverage — so you always know what is left, not just what is done.',
     label: 'Syllabus Tracker',
+    src: '/screenshots/syllabus-tracker.png',
   },
   {
     title: 'Build the exact practice set you need',
@@ -147,13 +148,13 @@ export default function LandingPage() {
 
           <div className="relative flex justify-center items-end gap-4 max-w-3xl mx-auto">
             <div className="hidden sm:block opacity-75 max-w-[200px]">
-              <PhoneMock label="Home Dashboard" />
+              <PhoneMock label="Home Dashboard" src="/screenshots/home.png" />
             </div>
             <div className="max-w-[260px] z-10">
-              <PhoneMock label="Practice Configurator" />
+              <PhoneMock label="Practice Configurator" src="/screenshots/practice-configurator.png" />
             </div>
             <div className="hidden sm:block opacity-75 max-w-[200px]">
-              <PhoneMock label="Smart Flashcards" />
+              <PhoneMock label="Smart Flashcards" src="/screenshots/flashcards.png" />
             </div>
           </div>
         </section>
@@ -169,7 +170,7 @@ export default function LandingPage() {
             </h2>
           </div>
 
-          <div className="divide-y divide-white/5">
+          <div className="divide-y divide-black/5">
             {showcase.map((row, i) => (
               <div
                 key={row.title}
@@ -184,7 +185,7 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className="flex justify-center">
-                  <PhoneMock label={row.label} />
+                  <PhoneMock label={row.label} src={row.src} />
                 </div>
               </div>
             ))}
