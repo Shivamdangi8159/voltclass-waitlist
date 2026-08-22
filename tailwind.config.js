@@ -8,8 +8,8 @@ module.exports = {
     extend: {
       colors: {
         voltCyan: '#00E5FF',
-        voltDark: '#07090C',
-        voltCard: '#11161D',
+        voltDark: '#FFFFFF',
+        voltCard: '#FFFFFF',
       },
     },
   },

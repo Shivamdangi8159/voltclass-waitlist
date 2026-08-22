@@ -26,7 +26,7 @@ export default function FAQPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#07090C] text-[#F5F7FA] font-sans selection:bg-[#00E5FF] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#00E5FF] selection:text-black">
       <Navbar />
 
       <main className="pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,25 +36,25 @@ export default function FAQPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Help & Support Center</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-white mb-4 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0B0F14] mb-4 tracking-tight">
             Frequently Asked <span className="text-[#00E5FF]">Questions</span>
           </h1>
-          <p className="text-sm sm:text-base text-[#9AA4B2] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#5B6472] leading-relaxed">
             Have questions about our DIY exercise configurator, 3D flashcards, AI doubt tokens, or enrollment? Find your answers below.
           </p>
         </div>
 
         {/* Search & Category Filter Bar */}
-        <div className="bg-[#11161D] border border-white/10 rounded-2xl p-4 sm:p-6 mb-10 space-y-4 shadow-xl">
+        <div className="bg-white border border-black/10 rounded-2xl p-4 sm:p-6 mb-10 space-y-4 shadow-xl">
           {/* Search Box */}
           <div className="relative">
-            <Search className="w-4 h-4 text-[#9AA4B2] absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-[#5B6472] absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search questions or keywords..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#07090C] border border-white/10 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder:text-[#9AA4B2]/60 focus:outline-none focus:border-[#00E5FF] transition-colors"
+              className="w-full bg-white border border-black/10 rounded-xl pl-11 pr-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/60 focus:outline-none focus:border-[#00E5FF] transition-colors"
             />
           </div>
 
@@ -67,7 +67,7 @@ export default function FAQPage() {
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
                   selectedCategory === category
                     ? 'bg-[#00E5FF] text-[#07090C] border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.3)]'
-                    : 'bg-[#07090C] text-[#9AA4B2] border-white/10 hover:text-white hover:border-white/20'
+                    : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                 }`}
               >
                 {category}
@@ -82,10 +82,10 @@ export default function FAQPage() {
             <FAQAccordion items={filteredFaqs} />
           </div>
         ) : (
-          <div className="bg-[#11161D] border border-white/10 rounded-2xl p-12 text-center my-8">
+          <div className="bg-white border border-black/10 rounded-2xl p-12 text-center my-8">
             <HelpCircle className="w-12 h-12 text-[#00E5FF] mx-auto mb-4 opacity-80" />
-            <h3 className="text-lg font-bold text-white mb-2">No Matching Questions Found</h3>
-            <p className="text-xs text-[#9AA4B2] mb-6">
+            <h3 className="text-lg font-bold text-[#0B0F14] mb-2">No Matching Questions Found</h3>
+            <p className="text-xs text-[#5B6472] mb-6">
               We couldn't find any questions matching "{searchQuery}". Try searching for something else or browse all categories.
             </p>
             <button
@@ -107,8 +107,8 @@ export default function FAQPage() {
               <MessageSquare className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">Still have questions?</h3>
-              <p className="text-xs text-[#9AA4B2] mt-1">
+              <h3 className="text-lg font-bold text-[#0B0F14]">Still have questions?</h3>
+              <p className="text-xs text-[#5B6472] mt-1">
                 Our support team is ready to help you with course details, technical issues, or access issues.
               </p>
             </div>

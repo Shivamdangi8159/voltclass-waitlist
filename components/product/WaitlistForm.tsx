@@ -64,8 +64,8 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
     return (
       <div className="bg-[#00E5FF]/10 border border-[#00E5FF] p-6 rounded-2xl text-center animate-in fade-in">
         <CheckCircle2 className="w-10 h-10 text-[#00E5FF] mx-auto mb-3" />
-        <h3 className="text-lg font-bold text-white mb-2">You're on the list!</h3>
-        <p className="text-xs text-[#9AA4B2] leading-relaxed">
+        <h3 className="text-lg font-bold text-[#0B0F14] mb-2">You're on the list!</h3>
+        <p className="text-xs text-[#5B6472] leading-relaxed">
           We'll email you when VoltClass is ready to charge your rank. ⚡
         </p>
       </div>
@@ -75,7 +75,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
   return (
     <form onSubmit={handleSubmit} className="space-y-3.5 text-left">
       <div>
-        <label className="text-[11px] font-bold text-[#9AA4B2] uppercase block mb-1">
+        <label className="text-[11px] font-bold text-[#5B6472] uppercase block mb-1">
           Full Name *
         </label>
         <input
@@ -84,19 +84,19 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
           placeholder="Rohan Sharma"
           value={formData.full_name}
           onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-          className="w-full bg-[#11161D] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#9AA4B2]/50 focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#00E5FF]"
         />
       </div>
 
       <div>
-        <label className="text-[11px] font-bold text-[#9AA4B2] uppercase block mb-1">
+        <label className="text-[11px] font-bold text-[#5B6472] uppercase block mb-1">
           Target Exam *
         </label>
         <select
           required
           value={formData.exam}
           onChange={(e) => setFormData({ ...formData, exam: e.target.value })}
-          className="w-full bg-[#11161D] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] focus:outline-none focus:border-[#00E5FF]"
         >
           <option value="">Select Target Exam</option>
           <option value="JEE Main">JEE Main</option>
@@ -106,7 +106,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
       </div>
 
       <div>
-        <label className="text-[11px] font-bold text-[#9AA4B2] uppercase block mb-1">
+        <label className="text-[11px] font-bold text-[#5B6472] uppercase block mb-1">
           Email Address *
         </label>
         <input
@@ -115,12 +115,12 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
           placeholder="student@gmail.com"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full bg-[#11161D] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#9AA4B2]/50 focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#00E5FF]"
         />
       </div>
 
       <div>
-        <label className="text-[11px] font-bold text-[#9AA4B2] uppercase block mb-1">
+        <label className="text-[11px] font-bold text-[#5B6472] uppercase block mb-1">
           Phone Number (Optional)
         </label>
         <input
@@ -128,7 +128,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
           placeholder="+91 98765 43210"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full bg-[#11161D] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#9AA4B2]/50 focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#00E5FF]"
         />
       </div>
 
@@ -149,7 +149,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
         )}
       </button>
 
-      <p className="text-[10px] text-[#9AA4B2] text-center pt-1">
+      <p className="text-[10px] text-[#5B6472] text-center pt-1">
         We'll never spam. Only rank-boosting updates.
       </p>
     </form>

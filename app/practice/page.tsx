@@ -264,7 +264,7 @@ export default function PracticePage() {
   const accuracyPct = quizQuestions.length > 0 ? Math.round((correctCount / quizQuestions.length) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-[#07090C] text-[#F5F7FA] font-sans selection:bg-[#00E5FF] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#00E5FF] selection:text-black">
       <Navbar />
 
       <main className="pt-28 pb-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -277,15 +277,15 @@ export default function PracticePage() {
                 <Zap className="w-3.5 h-3.5" />
                 <span>Custom Practice Engine</span>
               </div>
-              <h1 className="text-3xl sm:text-5xl font-black text-white mb-3">
+              <h1 className="text-3xl sm:text-5xl font-black text-[#0B0F14] mb-3">
                 DIY Exercise <span className="text-[#00E5FF]">Configurator</span>
               </h1>
-              <p className="text-xs sm:text-sm text-[#9AA4B2]">
+              <p className="text-xs sm:text-sm text-[#5B6472]">
                 Configure multi-topic practice sets with equal question distribution and live LaTeX solution breakdowns[cite: 3, 7].
               </p>
             </div>
 
-            <div className="bg-[#11161D] border border-white/10 rounded-2xl p-6 sm:p-8 space-y-8 shadow-2xl">
+            <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-8 space-y-8 shadow-2xl">
               {/* Step 1: Subject Selection */}
               <div>
                 <label className="text-xs font-extrabold text-[#00E5FF] uppercase tracking-wider block mb-3 flex items-center gap-2">
@@ -304,7 +304,7 @@ export default function PracticePage() {
                         className={`py-3.5 px-4 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-2 ${
                           active
                             ? 'bg-[#00E5FF]/10 text-[#00E5FF] border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]'
-                            : 'bg-[#07090C] text-[#9AA4B2] border-white/10 hover:text-white hover:border-white/20'
+                            : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                         }`}
                       >
                         <BookOpen className="w-4 h-4" />
@@ -332,8 +332,8 @@ export default function PracticePage() {
                         onClick={() => toggleChapter(ch.chapter)}
                         className={`p-3.5 rounded-xl text-xs font-bold border text-left flex items-center justify-between transition-all ${
                           active
-                            ? 'bg-white/10 text-white border-[#00E5FF]'
-                            : 'bg-[#07090C] text-[#9AA4B2] border-white/10 hover:text-white'
+                            ? 'bg-black/5 text-[#0B0F14] border-[#00E5FF]'
+                            : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14]'
                         }`}
                       >
                         <span className="truncate">{ch.chapter}</span>
@@ -365,7 +365,7 @@ export default function PracticePage() {
                           className={`px-3.5 py-2 rounded-lg text-xs font-medium border transition-all ${
                             active
                               ? 'bg-[#00E5FF] text-[#07090C] border-[#00E5FF] font-bold shadow-[0_0_10px_rgba(0,229,255,0.3)]'
-                              : 'bg-white/5 text-[#9AA4B2] border-white/10 hover:text-white'
+                              : 'bg-black/5 text-[#5B6472] border-black/10 hover:text-[#0B0F14]'
                           }`}
                         >
                           {topic}
@@ -392,8 +392,8 @@ export default function PracticePage() {
                         onClick={() => toggleType(t)}
                         className={`px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all ${
                           active
-                            ? 'bg-white/15 text-white border-[#00E5FF]'
-                            : 'bg-[#07090C] text-[#9AA4B2] border-white/10'
+                            ? 'bg-black/5 text-[#0B0F14] border-[#00E5FF]'
+                            : 'bg-white text-[#5B6472] border-black/10'
                         }`}
                       >
                         {t}
@@ -412,7 +412,7 @@ export default function PracticePage() {
                     </span>
                     Number of Questions
                   </label>
-                  <span className="text-sm font-black text-white">{questionCount} Questions</span>
+                  <span className="text-sm font-black text-[#0B0F14]">{questionCount} Questions</span>
                 </div>
                 <input
                   type="range"
@@ -421,7 +421,7 @@ export default function PracticePage() {
                   step="5"
                   value={questionCount}
                   onChange={(e) => setQuestionCount(Number(e.target.value))}
-                  className="w-full accent-[#00E5FF] bg-white/10 h-2 rounded-lg cursor-pointer"
+                  className="w-full accent-[#00E5FF] bg-black/5 h-2 rounded-lg cursor-pointer"
                 />
               </div>
 
@@ -441,12 +441,12 @@ export default function PracticePage() {
         {viewMode === 'quiz' && quizQuestions.length > 0 && (
           <div className="max-w-3xl mx-auto space-y-6 animate-in fade-in duration-300">
             {/* Live Header Status */}
-            <div className="bg-[#11161D] border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-xl">
+            <div className="bg-white border border-black/10 rounded-2xl p-4 flex items-center justify-between shadow-xl">
               <div className="flex items-center gap-2 text-xs font-bold text-amber-400 bg-amber-400/10 px-3 py-1.5 rounded-lg border border-amber-400/20">
                 <Clock className="w-4 h-4 animate-pulse" />
                 <span>{formatTime(secondsElapsed)}</span>
               </div>
-              <div className="text-xs font-extrabold text-white">
+              <div className="text-xs font-extrabold text-[#0B0F14]">
                 Question <span className="text-[#00E5FF]">{currentIndex + 1}</span> of {quizQuestions.length}
               </div>
               <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
@@ -455,14 +455,14 @@ export default function PracticePage() {
             </div>
 
             {/* Question Card */}
-            <div className="bg-[#11161D] border border-white/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
-              <div className="flex items-center justify-between border-b border-white/5 pb-3">
+            <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
+              <div className="flex items-center justify-between border-b border-black/5 pb-3">
                 <span className="text-[11px] font-extrabold text-[#00E5FF] uppercase tracking-wider">
                   {quizQuestions[currentIndex].type} • {quizQuestions[currentIndex].topic}
                 </span>
               </div>
 
-              <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
+              <p className="text-sm sm:text-base text-[#0B0F14] font-medium leading-relaxed">
                 Q{currentIndex + 1}. {quizQuestions[currentIndex].question}
               </p>
 
@@ -476,13 +476,13 @@ export default function PracticePage() {
                       onClick={() => handleOptionSelect(opt.key)}
                       className={`w-full text-left p-4 rounded-xl text-xs sm:text-sm font-medium border transition-all flex items-start gap-3 ${
                         isSelected
-                          ? 'bg-[#00E5FF]/15 text-white border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]'
-                          : 'bg-[#07090C] text-[#9AA4B2] border-white/10 hover:text-white hover:border-white/20'
+                          ? 'bg-[#00E5FF]/15 text-[#0B0F14] border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]'
+                          : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                       }`}
                     >
                       <span
                         className={`w-6 h-6 rounded-full font-bold text-xs flex items-center justify-center shrink-0 ${
-                          isSelected ? 'bg-[#00E5FF] text-black' : 'bg-white/10 text-white'
+                          isSelected ? 'bg-[#00E5FF] text-black' : 'bg-black/5 text-[#0B0F14]'
                         }`}
                       >
                         {opt.key}
@@ -495,8 +495,8 @@ export default function PracticePage() {
             </div>
 
             {/* 5-Column Question Navigator Grid[cite: 3, 7] */}
-            <div className="bg-[#11161D] border border-white/10 rounded-2xl p-4">
-              <span className="text-[10px] font-extrabold text-[#9AA4B2] uppercase block mb-3">
+            <div className="bg-white border border-black/10 rounded-2xl p-4">
+              <span className="text-[10px] font-extrabold text-[#5B6472] uppercase block mb-3">
                 Question Matrix (5 per row)[cite: 3, 7]
               </span>
               <div className="grid grid-cols-5 gap-2">
@@ -512,7 +512,7 @@ export default function PracticePage() {
                           ? 'border-[#00E5FF] text-[#00E5FF] bg-[#00E5FF]/10 ring-2 ring-[#00E5FF]/30'
                           : isAnswered
                           ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-400'
-                          : 'bg-white/5 border-white/10 text-[#9AA4B2]'
+                          : 'bg-black/5 border-black/10 text-[#5B6472]'
                       }`}
                     >
                       {idx + 1} {isAnswered && '✓'}
@@ -527,7 +527,7 @@ export default function PracticePage() {
               <button
                 disabled={currentIndex === 0}
                 onClick={() => setCurrentIndex((prev) => prev - 1)}
-                className="bg-white/5 hover:bg-white/10 disabled:opacity-30 text-white font-bold text-xs px-5 py-3 rounded-xl border border-white/10 flex items-center gap-1.5"
+                className="bg-black/5 hover:bg-black/5 disabled:opacity-30 text-[#0B0F14] font-bold text-xs px-5 py-3 rounded-xl border border-black/10 flex items-center gap-1.5"
               >
                 <ChevronLeft className="w-4 h-4" /> Previous
               </button>
@@ -557,35 +557,35 @@ export default function PracticePage() {
             {/* Top Score Banner */}
             <div className="bg-gradient-to-r from-[#11161D] via-[#0D1117] to-[#11161D] border border-[#00E5FF]/30 rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
               <Award className="w-12 h-12 text-[#00E5FF] mx-auto mb-3" />
-              <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
+              <h2 className="text-2xl sm:text-3xl font-black text-[#0B0F14] mb-2">
                 Exercise Completed! 🎉
               </h2>
-              <p className="text-xs text-[#9AA4B2] mb-6">
-                Total Time Elapsed: <span className="text-white font-bold">{formatTime(secondsElapsed)}</span>
+              <p className="text-xs text-[#5B6472] mb-6">
+                Total Time Elapsed: <span className="text-[#0B0F14] font-bold">{formatTime(secondsElapsed)}</span>
               </p>
 
               {/* 4 Summary Stat Cards */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                  <span className="text-[10px] text-[#9AA4B2] uppercase font-bold block mb-1">
+                <div className="bg-black/5 border border-black/10 rounded-xl p-3">
+                  <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Accuracy
                   </span>
                   <span className="text-2xl font-black text-emerald-400">{accuracyPct}%</span>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                  <span className="text-[10px] text-[#9AA4B2] uppercase font-bold block mb-1">
+                <div className="bg-black/5 border border-black/10 rounded-xl p-3">
+                  <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Correct
                   </span>
                   <span className="text-2xl font-black text-emerald-400">{correctCount}</span>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                  <span className="text-[10px] text-[#9AA4B2] uppercase font-bold block mb-1">
+                <div className="bg-black/5 border border-black/10 rounded-xl p-3">
+                  <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Wrong
                   </span>
                   <span className="text-2xl font-black text-rose-400">{wrongCount}</span>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                  <span className="text-[10px] text-[#9AA4B2] uppercase font-bold block mb-1">
+                <div className="bg-black/5 border border-black/10 rounded-xl p-3">
+                  <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Skipped
                   </span>
                   <span className="text-2xl font-black text-amber-400">{unattemptedCount}</span>
@@ -594,8 +594,8 @@ export default function PracticePage() {
             </div>
 
             {/* Detailed Question Solutions Breakdown[cite: 3, 7] */}
-            <div className="bg-[#11161D] border border-white/10 rounded-2xl p-6 space-y-6">
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
+            <div className="bg-white border border-black/10 rounded-2xl p-6 space-y-6">
+              <h3 className="text-base font-bold text-[#0B0F14] flex items-center gap-2">
                 <BarChart3 className="w-5 h-5 text-[#00E5FF]" /> Step-by-Step Solutions Breakdown[cite: 3, 7]
               </h3>
 
@@ -607,10 +607,10 @@ export default function PracticePage() {
                   return (
                     <div
                       key={q.id}
-                      className="bg-[#07090C] border border-white/10 rounded-xl p-5 space-y-3 text-left"
+                      className="bg-white border border-black/10 rounded-xl p-5 space-y-3 text-left"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-white">Question {idx + 1}</span>
+                        <span className="text-xs font-bold text-[#0B0F14]">Question {idx + 1}</span>
                         <span
                           className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-md ${
                             isSkipped
@@ -624,24 +624,24 @@ export default function PracticePage() {
                         </span>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-[#F5F7FA] font-medium leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#0B0F14] font-medium leading-relaxed">
                         {q.question}
                       </p>
 
                       <div className="text-xs space-y-1 pt-1">
-                        <div className="text-[#9AA4B2]">
+                        <div className="text-[#5B6472]">
                           Your Selection:{' '}
                           <span className={isCorrect ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold'}>
                             {q.selectedAnswer || 'None'}
                           </span>
                         </div>
-                        <div className="text-[#9AA4B2]">
+                        <div className="text-[#5B6472]">
                           Correct Answer:{' '}
                           <span className="text-emerald-400 font-bold">{q.correctAnswer}</span>
                         </div>
                       </div>
 
-                      <div className="bg-white/5 border border-white/5 rounded-lg p-3 text-xs text-[#9AA4B2] leading-relaxed">
+                      <div className="bg-black/5 border border-black/5 rounded-lg p-3 text-xs text-[#5B6472] leading-relaxed">
                         <span className="font-bold text-[#00E5FF] block mb-1">Solution Explanation:</span>
                         {q.solution}
                       </div>

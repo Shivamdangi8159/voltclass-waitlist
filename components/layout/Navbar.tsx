@@ -34,7 +34,7 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#07090C]/90 backdrop-blur-md border-b border-white/10 py-3 shadow-xl'
+          ? 'bg-white/90 backdrop-blur-md border-b border-black/10 py-3 shadow-xl'
           : 'bg-transparent py-5'
       }`}
     >
@@ -46,10 +46,10 @@ export const Navbar = () => {
               ⚡
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-black tracking-tight text-white font-sans">
+              <span className="text-xl font-black tracking-tight text-[#0B0F14] font-sans">
                 Volt<span className="text-[#00E5FF]">Class</span>
               </span>
-              <span className="text-[9px] font-bold text-[#9AA4B2] tracking-widest uppercase -mt-1">
+              <span className="text-[9px] font-bold text-[#5B6472] tracking-widest uppercase -mt-1">
                 Charge Your Rank
               </span>
             </div>
@@ -66,7 +66,7 @@ export const Navbar = () => {
                   className={`text-xs font-semibold transition-colors ${
                     isActive
                       ? 'text-[#00E5FF]'
-                      : 'text-[#9AA4B2] hover:text-white'
+                      : 'text-[#5B6472] hover:text-[#0B0F14]'
                   }`}
                 >
                   {link.name}
@@ -79,7 +79,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/login"
-              className="text-xs font-semibold text-[#F5F7FA] hover:text-[#00E5FF] px-4 py-2 rounded-lg hover:bg-white/5 transition-colors flex items-center gap-2"
+              className="text-xs font-semibold text-[#0B0F14] hover:text-[#00E5FF] px-4 py-2 rounded-lg hover:bg-black/5 transition-colors flex items-center gap-2"
             >
               <User className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span>Login</span>
@@ -96,7 +96,7 @@ export const Navbar = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-[#9AA4B2] hover:text-white p-2 focus:outline-none"
+            className="md:hidden text-[#5B6472] hover:text-[#0B0F14] p-2 focus:outline-none"
             aria-label="Toggle Navigation Drawer"
           >
             {mobileMenuOpen ? <X className="w-6 h-6 text-[#00E5FF]" /> : <Menu className="w-6 h-6" />}
@@ -106,7 +106,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0D1117] border-b border-white/10 px-6 py-6 space-y-4 shadow-2xl animate-in slide-in-from-top duration-200">
+        <div className="md:hidden bg-[#F6F8FA] border-b border-black/10 px-6 py-6 space-y-4 shadow-2xl animate-in slide-in-from-top duration-200">
           <nav className="flex flex-col space-y-3">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -115,8 +115,8 @@ export const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-semibold py-2 border-b border-white/5 transition-colors ${
-                    isActive ? 'text-[#00E5FF]' : 'text-[#9AA4B2]'
+                  className={`text-sm font-semibold py-2 border-b border-black/5 transition-colors ${
+                    isActive ? 'text-[#00E5FF]' : 'text-[#5B6472]'
                   }`}
                 >
                   {link.name}
@@ -128,7 +128,7 @@ export const Navbar = () => {
             <Link
               href="/login"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-xl border border-white/10 text-white font-semibold text-xs"
+              className="w-full text-center py-3 rounded-xl border border-black/10 text-[#0B0F14] font-semibold text-xs"
             >
               Login
             </Link>

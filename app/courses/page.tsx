@@ -27,7 +27,7 @@ export default function CoursesIndexPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#07090C] text-[#F5F7FA] font-sans selection:bg-[#00E5FF] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#00E5FF] selection:text-black">
       <Navbar />
 
       <main className="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,25 +37,25 @@ export default function CoursesIndexPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Structured Learning Batches</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-white mb-4 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0B0F14] mb-4 tracking-tight">
             Courses Built Around <span className="text-[#00E5FF]">Performance</span>
           </h1>
-          <p className="text-sm sm:text-base text-[#9AA4B2] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#5B6472] leading-relaxed">
             Rigorous NEET and JEE preparation systems featuring DIY practice configurators, 3D smart flashcards, and monthly AI doubt resolution tokens.
           </p>
         </div>
 
         {/* Search & Filter Controls */}
-        <div className="bg-[#11161D] border border-white/10 rounded-2xl p-4 sm:p-6 mb-12 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4 shadow-xl">
+        <div className="bg-white border border-black/10 rounded-2xl p-4 sm:p-6 mb-12 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4 shadow-xl">
           {/* Search Input */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-[#9AA4B2] absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-[#5B6472] absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search courses, subjects, or topics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#07090C] border border-white/10 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder:text-[#9AA4B2]/60 focus:outline-none focus:border-[#00E5FF] transition-colors"
+              className="w-full bg-white border border-black/10 rounded-xl pl-11 pr-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/60 focus:outline-none focus:border-[#00E5FF] transition-colors"
             />
           </div>
 
@@ -68,7 +68,7 @@ export default function CoursesIndexPage() {
                 className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
                   selectedExam === category
                     ? 'bg-[#00E5FF] text-[#07090C] border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.3)]'
-                    : 'bg-[#07090C] text-[#9AA4B2] border-white/10 hover:text-white hover:border-white/20'
+                    : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                 }`}
               >
                 {category}
@@ -86,10 +86,10 @@ export default function CoursesIndexPage() {
           </div>
         ) : (
           /* Empty State */
-          <div className="bg-[#11161D] border border-white/10 rounded-2xl p-12 text-center max-w-md mx-auto">
+          <div className="bg-white border border-black/10 rounded-2xl p-12 text-center max-w-md mx-auto">
             <BookOpen className="w-12 h-12 text-[#00E5FF] mx-auto mb-4 opacity-80" />
-            <h3 className="text-lg font-bold text-white mb-2">No Courses Found</h3>
-            <p className="text-xs text-[#9AA4B2] mb-6">
+            <h3 className="text-lg font-bold text-[#0B0F14] mb-2">No Courses Found</h3>
+            <p className="text-xs text-[#5B6472] mb-6">
               No course matches your search query or selected filter criteria.
             </p>
             <button

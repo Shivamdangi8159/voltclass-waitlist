@@ -18,13 +18,13 @@ export const FAQAccordion: React.FC<{ items: FAQItem[] }> = ({ items }) => {
         return (
           <div
             key={item.id}
-            className="bg-[#11161D] border border-white/10 rounded-xl overflow-hidden transition-colors"
+            className="bg-white border border-black/10 rounded-xl overflow-hidden transition-colors"
           >
             <button
               onClick={() => toggle(item.id)}
               className="w-full p-4 text-left flex items-center justify-between gap-4 focus:outline-none"
             >
-              <span className="text-sm font-bold text-white">{item.question}</span>
+              <span className="text-sm font-bold text-[#0B0F14]">{item.question}</span>
               <ChevronDown
                 className={`w-4 h-4 text-[#00E5FF] transition-transform duration-200 ${
                   isOpen ? 'rotate-180' : ''
@@ -32,7 +32,7 @@ export const FAQAccordion: React.FC<{ items: FAQItem[] }> = ({ items }) => {
               />
             </button>
             {isOpen && (
-              <div className="px-4 pb-4 text-xs text-[#9AA4B2] leading-relaxed border-t border-white/5 pt-3">
+              <div className="px-4 pb-4 text-xs text-[#5B6472] leading-relaxed border-t border-black/5 pt-3">
                 {item.answer}
               </div>
             )}
