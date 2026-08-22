@@ -87,11 +87,13 @@ const showcase = [
     title: 'Build the exact practice set you need',
     desc: 'Choose exam, subject, chapter and topic, then let the configurator balance the set for you. No repeats, no gaps.',
     label: 'DIY Configurator',
+    src: '/screenshots/diy-configurator.png',
   },
   {
     title: 'A doubt, solved in seconds',
     desc: 'Type or capture a question and get a clean, step-by-step explanation — built for the way JEE and NEET problems are actually asked.',
     label: 'AI Doubt Resolution',
+    src: '/screenshots/ai-doubt-resolution.png',
   },
 ];
 
