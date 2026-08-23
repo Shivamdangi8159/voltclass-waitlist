@@ -120,10 +120,10 @@ const showcase = [
     src: '/screenshots/diy-configurator.png',
   },
   {
-    title: 'A doubt, solved in seconds',
-    desc: 'Type or capture a question and get a clean, step-by-step explanation — built for the way JEE and NEET problems are actually asked.',
-    label: 'AI Doubt Resolution',
-    src: '/screenshots/ai-doubt-resolution.png',
+    title: 'A calmer mind studies better',
+    desc: 'Guided breathing, focus resets and mindfulness tools built right into your prep — Calm Your Mind, Boost Energy and Stop Overthinking sessions for whenever the pressure builds up.',
+    label: 'Mindfulness & Meditation',
+    src: '/screenshots/mindfulness.png',
   },
 ];
 

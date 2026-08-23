@@ -21,7 +21,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-xs leading-relaxed max-w-sm text-[#5B6472]">
-              VoltClass is a high-performance practice and revision engine engineered for serious NEET and JEE aspirants. Built around structured DIY practice, 3D smart flashcards, and AI doubt resolution.
+              India's smartest practice and performance engine for NEET &amp; JEE — built to turn scattered study hours into a measurable, trackable climb toward your rank.
             </p>
             <span className="text-xs font-bold text-[#2563EB] block tracking-wide">
               Charge Your Rank ⚡
