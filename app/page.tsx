@@ -135,7 +135,11 @@ export default function LandingPage() {
             <div className="flex flex-wrap justify-center gap-3 mb-16">
               <a
                 href="#waitlist"
+<<<<<<< HEAD
                 className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-sm px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(37,99,235,0.35)] transition-all"
+=======
+                className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(0,229,255,0.35)] transition-all"
+>>>>>>> 61b052089177dc761dbb80e0d7252a7eb9d94990
               >
                 <Smartphone className="w-4 h-4" /> Join the waitlist
               </a>
