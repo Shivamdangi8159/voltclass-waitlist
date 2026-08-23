@@ -145,7 +145,7 @@ export default function LandingPage() {
 
           <div className="relative max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] px-4 py-1.5 rounded-full text-xs font-bold mb-6">
-              <Zap className="w-3.5 h-3.5" /> Built for NEET &amp; JEE, not general studying
+              <Zap className="w-3.5 h-3.5" /> Smartest Rank Booster Practice Engine 
             </span>
 
             <h1 className="font-black tracking-tight leading-[1.05] text-4xl sm:text-6xl mb-6 text-[#0B0F14]">
