@@ -26,7 +26,7 @@ export const FAQAccordion: React.FC<{ items: FAQItem[] }> = ({ items }) => {
             >
               <span className="text-sm font-bold text-[#0B0F14]">{item.question}</span>
               <ChevronDown
-                className={`w-4 h-4 text-[#00E5FF] transition-transform duration-200 ${
+                className={`w-4 h-4 text-[#2563EB] transition-transform duration-200 ${
                   isOpen ? 'rotate-180' : ''
                 }`}
               />

@@ -7,7 +7,7 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
   const isNeet = course.exam === 'NEET';
 
   return (
-    <div className="bg-white border border-black/10 hover:border-[#00E5FF]/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,229,255,0.1)] group">
+    <div className="bg-white border border-black/10 hover:border-[#2563EB]/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_10px_30px_rgba(37,99,235,0.1)] group">
       <div>
         <div className="flex items-center justify-between gap-2 mb-4">
           <span
@@ -24,7 +24,7 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
           </span>
         </div>
 
-        <h3 className="text-xl font-bold text-[#0B0F14] group-hover:text-[#00E5FF] transition-colors mb-2">
+        <h3 className="text-xl font-bold text-[#0B0F14] group-hover:text-[#2563EB] transition-colors mb-2">
           {course.title}
         </h3>
 
@@ -34,11 +34,11 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
 
         <div className="space-y-2 mb-6">
           <div className="flex items-center gap-2 text-xs text-[#5B6472]">
-            <BookOpen className="w-4 h-4 text-[#00E5FF]" />
+            <BookOpen className="w-4 h-4 text-[#2563EB]" />
             <span>Subjects: {course.subject.join(', ')}</span>
           </div>
           <div className="flex items-center gap-2 text-xs text-[#5B6472]">
-            <Layers className="w-4 h-4 text-[#00E5FF]" />
+            <Layers className="w-4 h-4 text-[#2563EB]" />
             <span>{course.chapters.length} Core Modules</span>
           </div>
         </div>
@@ -46,7 +46,7 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
         <div className="border-t border-black/5 pt-4 mb-6 space-y-2">
           {course.features.slice(0, 3).map((feat, idx) => (
             <div key={idx} className="flex items-center gap-2 text-xs text-[#0B0F14]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#00A3FF] shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#1D4ED8] shrink-0" />
               <span className="truncate">{feat}</span>
             </div>
           ))}
@@ -64,7 +64,7 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
 
         <Link
           href={`/courses/${course.slug}`}
-          className="bg-black/5 hover:bg-[#00E5FF] hover:text-black text-[#0B0F14] font-bold text-xs px-4 py-2.5 rounded-lg transition-all flex items-center gap-1.5"
+          className="bg-black/5 hover:bg-[#2563EB] hover:text-black text-[#0B0F14] font-bold text-xs px-4 py-2.5 rounded-lg transition-all flex items-center gap-1.5"
         >
           View Details
           <ArrowRight className="w-3.5 h-3.5" />

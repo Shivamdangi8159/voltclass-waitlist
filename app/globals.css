@@ -7,7 +7,7 @@
     --bg-primary: #FFFFFF;
     --bg-secondary: #F6F8FA;
     --bg-card: #FFFFFF;
-    --volt-cyan: #00E5FF;
+    --volt-cyan: #2563EB;
     --text-primary: #0B0F14;
     --text-muted: #5B6472;
   }
@@ -27,14 +27,14 @@
   }
 
   ::selection {
-    background-color: #00E5FF;
+    background-color: #2563EB;
     color: #07090C;
   }
 }
 
 /* Custom Electric Glow Shadows */
 .glow-cyan {
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.35);
 }
 
 .glow-card {

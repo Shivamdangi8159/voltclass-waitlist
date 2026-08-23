@@ -41,12 +41,12 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#00A3FF] flex items-center justify-center text-black font-extrabold text-xl shadow-[0_0_15px_rgba(0,229,255,0.4)] group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#1D4ED8] flex items-center justify-center text-black font-extrabold text-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] group-hover:scale-105 transition-transform">
               ⚡
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-black tracking-tight text-[#0B0F14] font-sans">
-                Volt<span className="text-[#00E5FF]">Class</span>
+                Volt<span className="text-[#2563EB]">Class</span>
               </span>
               <span className="text-[9px] font-bold text-[#5B6472] tracking-widest uppercase -mt-1">
                 Charge Your Rank
@@ -64,7 +64,7 @@ export const Navbar = () => {
                   href={link.href}
                   className={`text-xs font-semibold transition-colors ${
                     isActive
-                      ? 'text-[#00E5FF]'
+                      ? 'text-[#2563EB]'
                       : 'text-[#5B6472] hover:text-[#0B0F14]'
                   }`}
                 >
@@ -78,7 +78,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/courses"
-              className="text-xs font-bold bg-[#00E5FF] text-[#07090C] hover:bg-[#33EBFF] px-5 py-2.5 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all flex items-center gap-2 hover:scale-[1.02]"
+              className="text-xs font-bold bg-[#2563EB] text-[#07090C] hover:bg-[#3B82F6] px-5 py-2.5 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all flex items-center gap-2 hover:scale-[1.02]"
             >
               <span>Explore Batches</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -91,7 +91,7 @@ export const Navbar = () => {
             className="md:hidden text-[#5B6472] hover:text-[#0B0F14] p-2 focus:outline-none"
             aria-label="Toggle Navigation Drawer"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-[#00E5FF]" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-[#2563EB]" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -108,7 +108,7 @@ export const Navbar = () => {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm font-semibold py-2 border-b border-black/5 transition-colors ${
-                    isActive ? 'text-[#00E5FF]' : 'text-[#5B6472]'
+                    isActive ? 'text-[#2563EB]' : 'text-[#5B6472]'
                   }`}
                 >
                   {link.name}
@@ -120,7 +120,7 @@ export const Navbar = () => {
             <Link
               href="/courses"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-xl bg-[#00E5FF] text-[#07090C] font-extrabold text-xs shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+              className="w-full text-center py-3 rounded-xl bg-[#2563EB] text-[#07090C] font-extrabold text-xs shadow-[0_0_15px_rgba(37,99,235,0.3)]"
             >
               Explore Batches
             </Link>

@@ -9,12 +9,12 @@ export const Footer = () => {
           {/* Brand Info */}
           <div className="col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#00A3FF] flex items-center justify-center text-black font-extrabold text-xl shadow-[0_0_15px_rgba(0,229,255,0.3)]">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#1D4ED8] flex items-center justify-center text-black font-extrabold text-xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
                 ⚡
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight text-[#0B0F14]">
-                  Volt<span className="text-[#00E5FF]">Class</span>
+                  Volt<span className="text-[#2563EB]">Class</span>
                 </span>
                 <span className="text-[10px] font-semibold text-[#5B6472] tracking-widest uppercase -mt-1">
                   Charge Your Rank
@@ -24,7 +24,7 @@ export const Footer = () => {
             <p className="text-xs leading-relaxed max-w-sm text-[#5B6472]">
               VoltClass is a high-performance practice and revision engine engineered for serious NEET and JEE aspirants. Built around structured DIY practice, 3D smart flashcards, and AI doubt resolution.
             </p>
-            <span className="text-xs font-bold text-[#00E5FF] block tracking-wide">
+            <span className="text-xs font-bold text-[#2563EB] block tracking-wide">
               Charge Your Rank ⚡
             </span>
           </div>
@@ -34,22 +34,22 @@ export const Footer = () => {
             <h4 className="text-xs font-bold text-[#0B0F14] uppercase tracking-wider mb-4">Product</h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link href="/courses" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/courses" className="hover:text-[#2563EB] transition-colors">
                   Batches & Courses
                 </Link>
               </li>
               <li>
-                <Link href="/practice" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/practice" className="hover:text-[#2563EB] transition-colors">
                   DIY Practice Engine
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/how-it-works" className="hover:text-[#2563EB] transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="/why-voltclass" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/why-voltclass" className="hover:text-[#2563EB] transition-colors">
                   Why VoltClass
                 </Link>
               </li>
@@ -61,17 +61,17 @@ export const Footer = () => {
             <h4 className="text-xs font-bold text-[#0B0F14] uppercase tracking-wider mb-4">Company</h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link href="/about" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/about" className="hover:text-[#2563EB] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/faq" className="hover:text-[#2563EB] transition-colors">
                   Help & FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/contact" className="hover:text-[#2563EB] transition-colors">
                   Contact Support
                 </Link>
               </li>
@@ -83,12 +83,12 @@ export const Footer = () => {
             <h4 className="text-xs font-bold text-[#0B0F14] uppercase tracking-wider mb-4">Legal</h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link href="/privacy-policy" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/privacy-policy" className="hover:text-[#2563EB] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-[#00E5FF] transition-colors">
+                <Link href="/terms" className="hover:text-[#2563EB] transition-colors">
                   Terms of Service
                 </Link>
               </li>

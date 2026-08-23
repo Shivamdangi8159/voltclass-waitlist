@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        voltCyan: '#00E5FF',
+        voltCyan: '#2563EB',
         voltDark: '#FFFFFF',
         voltCard: '#FFFFFF',
       },

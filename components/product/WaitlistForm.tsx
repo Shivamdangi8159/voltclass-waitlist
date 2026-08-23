@@ -62,8 +62,8 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
 
   if (submitted) {
     return (
-      <div className="bg-[#00E5FF]/10 border border-[#00E5FF] p-6 rounded-2xl text-center animate-in fade-in">
-        <CheckCircle2 className="w-10 h-10 text-[#00E5FF] mx-auto mb-3" />
+      <div className="bg-[#2563EB]/10 border border-[#2563EB] p-6 rounded-2xl text-center animate-in fade-in">
+        <CheckCircle2 className="w-10 h-10 text-[#2563EB] mx-auto mb-3" />
         <h3 className="text-lg font-bold text-[#0B0F14] mb-2">You're on the list!</h3>
         <p className="text-xs text-[#5B6472] leading-relaxed">
           We'll email you when VoltClass is ready to charge your rank. ⚡
@@ -84,7 +84,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
           placeholder="Rohan Sharma"
           value={formData.full_name}
           onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#2563EB]"
         />
       </div>
 
@@ -96,7 +96,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
           required
           value={formData.exam}
           onChange={(e) => setFormData({ ...formData, exam: e.target.value })}
-          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] focus:outline-none focus:border-[#2563EB]"
         >
           <option value="">Select Target Exam</option>
           <option value="JEE Main">JEE Main</option>
@@ -115,7 +115,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
           placeholder="student@gmail.com"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#2563EB]"
         />
       </div>
 
@@ -128,7 +128,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
           placeholder="+91 98765 43210"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#00E5FF]"
+          className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#0B0F14] placeholder:text-[#5B6472]/50 focus:outline-none focus:border-[#2563EB]"
         />
       </div>
 
@@ -137,7 +137,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#00E5FF] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,229,255,0.3)] flex items-center justify-center gap-2 mt-2"
+        className="w-full bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2 mt-2"
       >
         {loading ? (
           <Loader2 className="w-4 h-4 animate-spin" />

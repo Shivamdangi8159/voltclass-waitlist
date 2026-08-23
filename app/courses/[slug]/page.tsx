@@ -24,13 +24,13 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
   const isNeet = course.exam === 'NEET';
 
   return (
-    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#00E5FF] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-black">
       <Navbar />
 
       <main className="pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/courses"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-[#5B6472] hover:text-[#00E5FF] transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-[#5B6472] hover:text-[#2563EB] transition-colors mb-8"
         >
           <ArrowLeft className="w-3.5 h-3.5" /> All courses
         </Link>
@@ -66,7 +66,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
           <div className="md:col-span-2 space-y-10">
             <section>
               <h2 className="flex items-center gap-2 text-sm font-bold text-[#0B0F14] uppercase tracking-wider mb-4">
-                <Layers className="w-4 h-4 text-[#00E5FF]" /> Core modules
+                <Layers className="w-4 h-4 text-[#2563EB]" /> Core modules
               </h2>
               <div className="space-y-3">
                 {course.chapters.map((ch) => (
@@ -85,12 +85,12 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
 
             <section>
               <h2 className="flex items-center gap-2 text-sm font-bold text-[#0B0F14] uppercase tracking-wider mb-4">
-                <BookOpen className="w-4 h-4 text-[#00E5FF]" /> What&apos;s included
+                <BookOpen className="w-4 h-4 text-[#2563EB]" /> What&apos;s included
               </h2>
               <ul className="space-y-2.5">
                 {course.features.map((feat, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-[#0B0F14]">
-                    <CheckCircle2 className="w-4 h-4 text-[#00A3FF] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1D4ED8] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -108,7 +108,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
               </div>
               <Link
                 href="/#waitlist"
-                className="w-full bg-[#00E5FF] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,229,255,0.3)] flex items-center justify-center gap-2"
+                className="w-full bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2"
               >
                 Enroll now <ArrowRight className="w-4 h-4" />
               </Link>

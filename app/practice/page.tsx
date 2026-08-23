@@ -264,7 +264,7 @@ export default function PracticePage() {
   const accuracyPct = quizQuestions.length > 0 ? Math.round((correctCount / quizQuestions.length) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#00E5FF] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-black">
       <Navbar />
 
       <main className="pt-28 pb-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -273,12 +273,12 @@ export default function PracticePage() {
           <div className="space-y-8 animate-in fade-in duration-300">
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#00E5FF] mb-4">
+              <div className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/20 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#2563EB] mb-4">
                 <Zap className="w-3.5 h-3.5" />
                 <span>Custom Practice Engine</span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-black text-[#0B0F14] mb-3">
-                DIY Exercise <span className="text-[#00E5FF]">Configurator</span>
+                DIY Exercise <span className="text-[#2563EB]">Configurator</span>
               </h1>
               <p className="text-xs sm:text-sm text-[#5B6472]">
                 Configure multi-topic practice sets with equal question distribution and live LaTeX solution breakdowns[cite: 3, 7].
@@ -288,8 +288,8 @@ export default function PracticePage() {
             <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-8 space-y-8 shadow-2xl">
               {/* Step 1: Subject Selection */}
               <div>
-                <label className="text-xs font-extrabold text-[#00E5FF] uppercase tracking-wider block mb-3 flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#00E5FF] text-black text-[11px] font-bold flex items-center justify-center">
+                <label className="text-xs font-extrabold text-[#2563EB] uppercase tracking-wider block mb-3 flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#2563EB] text-black text-[11px] font-bold flex items-center justify-center">
                     1
                   </span>
                   Select Subject
@@ -303,7 +303,7 @@ export default function PracticePage() {
                         onClick={() => handleSubjectChange(s)}
                         className={`py-3.5 px-4 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-2 ${
                           active
-                            ? 'bg-[#00E5FF]/10 text-[#00E5FF] border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]'
+                            ? 'bg-[#2563EB]/10 text-[#2563EB] border-[#2563EB] shadow-[0_0_15px_rgba(37,99,235,0.2)]'
                             : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                         }`}
                       >
@@ -317,8 +317,8 @@ export default function PracticePage() {
 
               {/* Step 2: Chapter Selection */}
               <div>
-                <label className="text-xs font-extrabold text-[#00E5FF] uppercase tracking-wider block mb-3 flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#00E5FF] text-black text-[11px] font-bold flex items-center justify-center">
+                <label className="text-xs font-extrabold text-[#2563EB] uppercase tracking-wider block mb-3 flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#2563EB] text-black text-[11px] font-bold flex items-center justify-center">
                     2
                   </span>
                   Select Chapters
@@ -332,12 +332,12 @@ export default function PracticePage() {
                         onClick={() => toggleChapter(ch.chapter)}
                         className={`p-3.5 rounded-xl text-xs font-bold border text-left flex items-center justify-between transition-all ${
                           active
-                            ? 'bg-black/5 text-[#0B0F14] border-[#00E5FF]'
+                            ? 'bg-black/5 text-[#0B0F14] border-[#2563EB]'
                             : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14]'
                         }`}
                       >
                         <span className="truncate">{ch.chapter}</span>
-                        {active && <Check className="w-4 h-4 text-[#00E5FF] shrink-0" />}
+                        {active && <Check className="w-4 h-4 text-[#2563EB] shrink-0" />}
                       </button>
                     );
                   })}
@@ -346,8 +346,8 @@ export default function PracticePage() {
 
               {/* Step 3: Topic Selection */}
               <div>
-                <label className="text-xs font-extrabold text-[#00E5FF] uppercase tracking-wider block mb-3 flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#00E5FF] text-black text-[11px] font-bold flex items-center justify-center">
+                <label className="text-xs font-extrabold text-[#2563EB] uppercase tracking-wider block mb-3 flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#2563EB] text-black text-[11px] font-bold flex items-center justify-center">
                     3
                   </span>
                   Select Topics
@@ -364,7 +364,7 @@ export default function PracticePage() {
                           onClick={() => toggleTopic(topic)}
                           className={`px-3.5 py-2 rounded-lg text-xs font-medium border transition-all ${
                             active
-                              ? 'bg-[#00E5FF] text-[#07090C] border-[#00E5FF] font-bold shadow-[0_0_10px_rgba(0,229,255,0.3)]'
+                              ? 'bg-[#2563EB] text-[#07090C] border-[#2563EB] font-bold shadow-[0_0_10px_rgba(37,99,235,0.3)]'
                               : 'bg-black/5 text-[#5B6472] border-black/10 hover:text-[#0B0F14]'
                           }`}
                         >
@@ -377,8 +377,8 @@ export default function PracticePage() {
 
               {/* Step 4: Question Types */}
               <div>
-                <label className="text-xs font-extrabold text-[#00E5FF] uppercase tracking-wider block mb-3 flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#00E5FF] text-black text-[11px] font-bold flex items-center justify-center">
+                <label className="text-xs font-extrabold text-[#2563EB] uppercase tracking-wider block mb-3 flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#2563EB] text-black text-[11px] font-bold flex items-center justify-center">
                     4
                   </span>
                   Filter Question Types
@@ -392,7 +392,7 @@ export default function PracticePage() {
                         onClick={() => toggleType(t)}
                         className={`px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all ${
                           active
-                            ? 'bg-black/5 text-[#0B0F14] border-[#00E5FF]'
+                            ? 'bg-black/5 text-[#0B0F14] border-[#2563EB]'
                             : 'bg-white text-[#5B6472] border-black/10'
                         }`}
                       >
@@ -406,8 +406,8 @@ export default function PracticePage() {
               {/* Step 5: Question Quantity */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-xs font-extrabold text-[#00E5FF] uppercase tracking-wider flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#00E5FF] text-black text-[11px] font-bold flex items-center justify-center">
+                  <label className="text-xs font-extrabold text-[#2563EB] uppercase tracking-wider flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-[#2563EB] text-black text-[11px] font-bold flex items-center justify-center">
                       5
                     </span>
                     Number of Questions
@@ -421,14 +421,14 @@ export default function PracticePage() {
                   step="5"
                   value={questionCount}
                   onChange={(e) => setQuestionCount(Number(e.target.value))}
-                  className="w-full accent-[#00E5FF] bg-black/5 h-2 rounded-lg cursor-pointer"
+                  className="w-full accent-[#2563EB] bg-black/5 h-2 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* CTA Button */}
               <button
                 onClick={startExercise}
-                className="w-full bg-[#00E5FF] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm py-4 rounded-xl shadow-[0_0_25px_rgba(0,229,255,0.35)] transition-all flex items-center justify-center gap-2 hover:scale-[1.01]"
+                className="w-full bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-sm py-4 rounded-xl shadow-[0_0_25px_rgba(37,99,235,0.35)] transition-all flex items-center justify-center gap-2 hover:scale-[1.01]"
               >
                 <Zap className="w-4 h-4" />
                 <span>Generate Exercise & Start Timer</span>
@@ -447,9 +447,9 @@ export default function PracticePage() {
                 <span>{formatTime(secondsElapsed)}</span>
               </div>
               <div className="text-xs font-extrabold text-[#0B0F14]">
-                Question <span className="text-[#00E5FF]">{currentIndex + 1}</span> of {quizQuestions.length}
+                Question <span className="text-[#2563EB]">{currentIndex + 1}</span> of {quizQuestions.length}
               </div>
-              <span className="text-[10px] font-bold text-[#00A3FF] bg-[#00A3FF]/10 px-2.5 py-1 rounded-md border border-[#00A3FF]/20">
+              <span className="text-[10px] font-bold text-[#1D4ED8] bg-[#1D4ED8]/10 px-2.5 py-1 rounded-md border border-[#1D4ED8]/20">
                 {quizQuestions[currentIndex].difficulty}
               </span>
             </div>
@@ -457,7 +457,7 @@ export default function PracticePage() {
             {/* Question Card */}
             <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
               <div className="flex items-center justify-between border-b border-black/5 pb-3">
-                <span className="text-[11px] font-extrabold text-[#00E5FF] uppercase tracking-wider">
+                <span className="text-[11px] font-extrabold text-[#2563EB] uppercase tracking-wider">
                   {quizQuestions[currentIndex].type} • {quizQuestions[currentIndex].topic}
                 </span>
               </div>
@@ -476,13 +476,13 @@ export default function PracticePage() {
                       onClick={() => handleOptionSelect(opt.key)}
                       className={`w-full text-left p-4 rounded-xl text-xs sm:text-sm font-medium border transition-all flex items-start gap-3 ${
                         isSelected
-                          ? 'bg-[#00E5FF]/15 text-[#0B0F14] border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]'
+                          ? 'bg-[#2563EB]/15 text-[#0B0F14] border-[#2563EB] shadow-[0_0_15px_rgba(37,99,235,0.2)]'
                           : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                       }`}
                     >
                       <span
                         className={`w-6 h-6 rounded-full font-bold text-xs flex items-center justify-center shrink-0 ${
-                          isSelected ? 'bg-[#00E5FF] text-black' : 'bg-black/5 text-[#0B0F14]'
+                          isSelected ? 'bg-[#2563EB] text-black' : 'bg-black/5 text-[#0B0F14]'
                         }`}
                       >
                         {opt.key}
@@ -509,9 +509,9 @@ export default function PracticePage() {
                       onClick={() => setCurrentIndex(idx)}
                       className={`h-9 rounded-lg text-xs font-bold transition-all border flex items-center justify-center ${
                         isCurrent
-                          ? 'border-[#00E5FF] text-[#00E5FF] bg-[#00E5FF]/10 ring-2 ring-[#00E5FF]/30'
+                          ? 'border-[#2563EB] text-[#2563EB] bg-[#2563EB]/10 ring-2 ring-[#2563EB]/30'
                           : isAnswered
-                          ? 'bg-[#00A3FF]/20 border-[#00A3FF]/50 text-[#00A3FF]'
+                          ? 'bg-[#1D4ED8]/20 border-[#1D4ED8]/50 text-[#1D4ED8]'
                           : 'bg-black/5 border-black/10 text-[#5B6472]'
                       }`}
                     >
@@ -535,14 +535,14 @@ export default function PracticePage() {
               {currentIndex < quizQuestions.length - 1 ? (
                 <button
                   onClick={() => setCurrentIndex((prev) => prev + 1)}
-                  className="bg-[#00E5FF] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-xs px-6 py-3 rounded-xl shadow-[0_0_15px_rgba(0,229,255,0.3)] flex items-center gap-1.5"
+                  className="bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-xs px-6 py-3 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.3)] flex items-center gap-1.5"
                 >
                   Next <ChevronRight className="w-4 h-4" />
                 </button>
               ) : (
                 <button
                   onClick={finishQuiz}
-                  className="bg-[#00A3FF] hover:bg-[#33B5FF] text-black font-extrabold text-xs px-6 py-3 rounded-xl shadow-[0_0_15px_rgba(0,163,255,0.3)] flex items-center gap-1.5"
+                  className="bg-[#1D4ED8] hover:bg-[#33B5FF] text-black font-extrabold text-xs px-6 py-3 rounded-xl shadow-[0_0_15px_rgba(0,163,255,0.3)] flex items-center gap-1.5"
                 >
                   Submit Exercise
                 </button>
@@ -555,8 +555,8 @@ export default function PracticePage() {
         {viewMode === 'summary' && (
           <div className="max-w-4xl mx-auto space-y-8 animate-in zoom-in-95 duration-300">
             {/* Top Score Banner */}
-            <div className="bg-gradient-to-r from-[#11161D] via-[#0D1117] to-[#11161D] border border-[#00E5FF]/30 rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
-              <Award className="w-12 h-12 text-[#00E5FF] mx-auto mb-3" />
+            <div className="bg-gradient-to-r from-[#11161D] via-[#0D1117] to-[#11161D] border border-[#2563EB]/30 rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
+              <Award className="w-12 h-12 text-[#2563EB] mx-auto mb-3" />
               <h2 className="text-2xl sm:text-3xl font-black text-[#0B0F14] mb-2">
                 Exercise Completed! 🎉
               </h2>
@@ -570,13 +570,13 @@ export default function PracticePage() {
                   <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Accuracy
                   </span>
-                  <span className="text-2xl font-black text-[#00A3FF]">{accuracyPct}%</span>
+                  <span className="text-2xl font-black text-[#1D4ED8]">{accuracyPct}%</span>
                 </div>
                 <div className="bg-black/5 border border-black/10 rounded-xl p-3">
                   <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
                     Correct
                   </span>
-                  <span className="text-2xl font-black text-[#00A3FF]">{correctCount}</span>
+                  <span className="text-2xl font-black text-[#1D4ED8]">{correctCount}</span>
                 </div>
                 <div className="bg-black/5 border border-black/10 rounded-xl p-3">
                   <span className="text-[10px] text-[#5B6472] uppercase font-bold block mb-1">
@@ -596,7 +596,7 @@ export default function PracticePage() {
             {/* Detailed Question Solutions Breakdown[cite: 3, 7] */}
             <div className="bg-white border border-black/10 rounded-2xl p-6 space-y-6">
               <h3 className="text-base font-bold text-[#0B0F14] flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-[#00E5FF]" /> Step-by-Step Solutions Breakdown[cite: 3, 7]
+                <BarChart3 className="w-5 h-5 text-[#2563EB]" /> Step-by-Step Solutions Breakdown[cite: 3, 7]
               </h3>
 
               <div className="space-y-4">
@@ -631,18 +631,18 @@ export default function PracticePage() {
                       <div className="text-xs space-y-1 pt-1">
                         <div className="text-[#5B6472]">
                           Your Selection:{' '}
-                          <span className={isCorrect ? 'text-[#00A3FF] font-bold' : 'text-rose-400 font-bold'}>
+                          <span className={isCorrect ? 'text-[#1D4ED8] font-bold' : 'text-rose-400 font-bold'}>
                             {q.selectedAnswer || 'None'}
                           </span>
                         </div>
                         <div className="text-[#5B6472]">
                           Correct Answer:{' '}
-                          <span className="text-[#00A3FF] font-bold">{q.correctAnswer}</span>
+                          <span className="text-[#1D4ED8] font-bold">{q.correctAnswer}</span>
                         </div>
                       </div>
 
                       <div className="bg-black/5 border border-black/5 rounded-lg p-3 text-xs text-[#5B6472] leading-relaxed">
-                        <span className="font-bold text-[#00E5FF] block mb-1">Solution Explanation:</span>
+                        <span className="font-bold text-[#2563EB] block mb-1">Solution Explanation:</span>
                         {q.solution}
                       </div>
                     </div>
@@ -654,7 +654,7 @@ export default function PracticePage() {
             {/* Restart CTA */}
             <button
               onClick={() => setViewMode('setup')}
-              className="w-full bg-[#00E5FF] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm py-4 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all flex items-center justify-center gap-2"
+              className="w-full bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-sm py-4 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all flex items-center justify-center gap-2"
             >
               <RotateCcw className="w-4 h-4" />
               <span>Configure Another Exercise</span>
