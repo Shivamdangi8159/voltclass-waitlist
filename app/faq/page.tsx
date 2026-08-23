@@ -26,7 +26,7 @@ export default function FAQPage() {
   });
 
   return (
-    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-white">
       <Navbar />
 
       <main className="pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export default function FAQPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
                   selectedCategory === category
-                    ? 'bg-[#2563EB] text-[#07090C] border-[#2563EB] shadow-[0_0_15px_rgba(37,99,235,0.3)]'
+                    ? 'bg-[#2563EB] text-white border-[#2563EB] shadow-[0_0_15px_rgba(37,99,235,0.3)]'
                     : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                 }`}
               >
@@ -93,7 +93,7 @@ export default function FAQPage() {
                 setSelectedCategory('All');
                 setSearchQuery('');
               }}
-              className="bg-[#2563EB] text-[#07090C] text-xs font-bold px-5 py-2.5 rounded-xl hover:bg-[#3B82F6] transition-all"
+              className="bg-[#2563EB] text-white text-xs font-bold px-5 py-2.5 rounded-xl hover:bg-[#3B82F6] transition-all"
             >
               Clear Filters
             </button>
@@ -115,7 +115,7 @@ export default function FAQPage() {
           </div>
           <Link
             href="/contact"
-            className="w-full sm:w-auto bg-[#2563EB] text-[#07090C] font-extrabold text-xs px-6 py-3.5 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:bg-[#3B82F6] transition-all flex items-center justify-center gap-2 whitespace-nowrap"
+            className="w-full sm:w-auto bg-[#2563EB] text-white font-extrabold text-xs px-6 py-3.5 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:bg-[#3B82F6] transition-all flex items-center justify-center gap-2 whitespace-nowrap"
           >
             <span>Contact Support</span>
             <ArrowRight className="w-4 h-4" />

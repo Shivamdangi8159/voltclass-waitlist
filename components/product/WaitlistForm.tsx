@@ -137,7 +137,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({ source = 'website', 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2 mt-2"
+        className="w-full bg-[#2563EB] hover:bg-[#3B82F6] text-white font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2 mt-2"
       >
         {loading ? (
           <Loader2 className="w-4 h-4 animate-spin" />

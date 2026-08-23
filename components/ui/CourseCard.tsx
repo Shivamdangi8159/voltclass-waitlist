@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CourseData } from '@/types';
-import { ArrowRight, BookOpen, Layers, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
   const isNeet = course.exam === 'NEET';
@@ -24,30 +24,16 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
           </span>
         </div>
 
-        <h3 className="text-xl font-bold text-[#0B0F14] group-hover:text-[#2563EB] transition-colors mb-2">
+        <h3 className="text-xl font-bold text-[#0B0F14] group-hover:text-[#2563EB] transition-colors mb-1">
           {course.title}
         </h3>
-
-        <p className="text-sm text-[#5B6472] line-clamp-2 mb-6 leading-relaxed">
-          {course.description}
-        </p>
+        <p className="text-xs font-semibold text-[#2563EB] mb-4">{course.tagline}</p>
 
         <div className="space-y-2 mb-6">
-          <div className="flex items-center gap-2 text-xs text-[#5B6472]">
-            <BookOpen className="w-4 h-4 text-[#2563EB]" />
-            <span>Subjects: {course.subject.join(', ')}</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs text-[#5B6472]">
-            <Layers className="w-4 h-4 text-[#2563EB]" />
-            <span>{course.chapters.length} Core Modules</span>
-          </div>
-        </div>
-
-        <div className="border-t border-black/5 pt-4 mb-6 space-y-2">
-          {course.features.slice(0, 3).map((feat, idx) => (
-            <div key={idx} className="flex items-center gap-2 text-xs text-[#0B0F14]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#1D4ED8] shrink-0" />
-              <span className="truncate">{feat}</span>
+          {course.mainBullets.slice(0, 4).map((bullet, idx) => (
+            <div key={idx} className="flex items-start gap-2 text-xs text-[#0B0F14]">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#1D4ED8] shrink-0 mt-0.5" />
+              <span>{bullet}</span>
             </div>
           ))}
         </div>
@@ -55,16 +41,19 @@ export const CourseCard: React.FC<{ course: CourseData }> = ({ course }) => {
 
       <div className="border-t border-black/10 pt-4 flex items-center justify-between mt-auto">
         <div>
-          <span className="text-xs text-[#5B6472] block">Complete Access</span>
+          <span className="text-xs text-[#5B6472] block">Course Fee</span>
           <div className="flex items-baseline gap-2">
             <span className="text-2xl font-black text-[#0B0F14]">₹{course.price}</span>
             <span className="text-xs text-[#5B6472] line-through">₹{course.originalPrice}</span>
           </div>
+          {course.installment && (
+            <span className="text-[10px] text-[#5B6472]">or {course.installment} in installments</span>
+          )}
         </div>
 
         <Link
           href={`/courses/${course.slug}`}
-          className="bg-black/5 hover:bg-[#2563EB] hover:text-black text-[#0B0F14] font-bold text-xs px-4 py-2.5 rounded-lg transition-all flex items-center gap-1.5"
+          className="bg-black/5 hover:bg-[#2563EB] hover:text-white text-[#0B0F14] font-bold text-xs px-4 py-2.5 rounded-lg transition-all flex items-center gap-1.5"
         >
           View Details
           <ArrowRight className="w-3.5 h-3.5" />

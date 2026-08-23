@@ -76,6 +76,36 @@ const appFeatures = [
   },
 ];
 
+// The remaining features that round out "30+ Smart Features". Some of these
+// are inferred from the app screenshots and course notes — double check this
+// list against what's actually shipped before publishing.
+const moreFeatures = [
+  'Weekly Test Papers',
+  'Full-Length Mock Tests',
+  'Previous Papers & Results Archive',
+  'Daily Practice Streak (DPS) Tracker',
+  'Gamified Points & Rewards',
+  'Live Accuracy Meter',
+  'Weak-Topic Auto Detection',
+  'Chapter-wise Syllabus Tracker',
+  'PYQ Bank for NEET & JEE',
+  'Assertion-Reason & Match-Column Sets',
+  'Bookmark & Personal Notes',
+  'Mistake Notebook',
+  'Time-per-Question Analytics',
+  'Full Performance Dashboard',
+  'Custom Test Builder',
+  'Equal Topic-Distribution Balancing',
+  'AI-Curated Smart Revision Sets',
+  'Daily Motivational Quotes',
+  'Mindfulness & Focus Breaks',
+  'Rank-Improvement Analytics',
+  'Multi-Device Sync',
+  'PRO Badge & Milestones',
+  'LaTeX-Rendered Formulas & Solutions',
+  'Hinglish AI Doubt Support',
+];
+
 const showcase = [
   {
     title: 'Your syllabus, mapped and tracked',
@@ -102,7 +132,7 @@ const faqTeaser = FAQS_DATA.slice(0, 4);
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-white">
       <Navbar />
 
       <main>
@@ -135,11 +165,7 @@ export default function LandingPage() {
             <div className="flex flex-wrap justify-center gap-3 mb-16">
               <a
                 href="#waitlist"
-<<<<<<< HEAD
-                className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#3B82F6] text-[#07090C] font-extrabold text-sm px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(37,99,235,0.35)] transition-all"
-=======
-                className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#33EBFF] text-[#07090C] font-extrabold text-sm px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(0,229,255,0.35)] transition-all"
->>>>>>> 61b052089177dc761dbb80e0d7252a7eb9d94990
+                className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#3B82F6] text-white font-extrabold text-sm px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(37,99,235,0.35)] transition-all"
               >
                 <Smartphone className="w-4 h-4" /> Join the waitlist
               </a>
@@ -201,16 +227,20 @@ export default function LandingPage() {
         {/* ------------------------------------------------------ FEATURES */}
         <section id="features" className="bg-[#F6F8FA] border-y border-black/10 py-24 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center max-w-xl mx-auto mb-12">
-              <span className="block text-xs font-extrabold uppercase tracking-widest text-[#2563EB] mb-2">
-                Complete system
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/20 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#2563EB] mb-4">
+                <Sparkles className="w-3.5 h-3.5" /> 30+ Smart Features
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-[#0B0F14]">
-                Engineered for score progression
+              <h2 className="text-3xl sm:text-4xl font-black text-[#0B0F14] mb-4">
+                Everything a top ranker needs — nothing you'll find in a regular book
               </h2>
+              <p className="text-sm sm:text-base text-[#5B6472] leading-relaxed">
+                From subject-level practice to daily accuracy tracking to focus and mindset —
+                VoltClass covers the full loop, not just questions and answers.
+              </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
               {appFeatures.map((item) => (
                 <div
                   key={item.title}
@@ -223,6 +253,22 @@ export default function LandingPage() {
                   <p className="text-sm text-[#5B6472] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-8">
+              <h3 className="text-sm font-bold text-[#0B0F14] uppercase tracking-wider mb-5">
+                And 24 more tools built into every plan
+              </h3>
+              <div className="flex flex-wrap gap-2.5">
+                {moreFeatures.map((f) => (
+                  <span
+                    key={f}
+                    className="text-xs font-semibold text-[#0B0F14] bg-black/5 border border-black/10 px-3.5 py-2 rounded-full"
+                  >
+                    {f}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </section>

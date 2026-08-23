@@ -74,7 +74,7 @@ export const DashboardMockup: React.FC = () => {
             ½ ε₀ E²
           </div>
           <div className="bg-[#2563EB]/10 border border-[#2563EB] p-2.5 rounded-lg text-xs text-[#0B0F14] font-semibold flex items-center gap-2">
-            <span className="w-5 h-5 rounded-full bg-[#2563EB] text-black flex items-center justify-center font-bold text-[10px]">B</span>
+            <span className="w-5 h-5 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-bold text-[10px]">B</span>
             ½ ε₀ E² · Ad (Selected)
           </div>
         </div>

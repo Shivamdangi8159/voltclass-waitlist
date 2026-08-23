@@ -41,9 +41,12 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#1D4ED8] flex items-center justify-center text-black font-extrabold text-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] group-hover:scale-105 transition-transform">
-              ⚡
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.png"
+              alt="VoltClass"
+              className="w-9 h-9 rounded-xl object-contain group-hover:scale-105 transition-transform"
+            />
             <div className="flex flex-col">
               <span className="text-xl font-black tracking-tight text-[#0B0F14] font-sans">
                 Volt<span className="text-[#2563EB]">Class</span>
@@ -78,7 +81,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/courses"
-              className="text-xs font-bold bg-[#2563EB] text-[#07090C] hover:bg-[#3B82F6] px-5 py-2.5 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all flex items-center gap-2 hover:scale-[1.02]"
+              className="text-xs font-bold bg-[#2563EB] text-white hover:bg-[#3B82F6] px-5 py-2.5 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all flex items-center gap-2 hover:scale-[1.02]"
             >
               <span>Explore Batches</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -120,7 +123,7 @@ export const Navbar = () => {
             <Link
               href="/courses"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-xl bg-[#2563EB] text-[#07090C] font-extrabold text-xs shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+              className="w-full text-center py-3 rounded-xl bg-[#2563EB] text-white font-extrabold text-xs shadow-[0_0_15px_rgba(37,99,235,0.3)]"
             >
               Explore Batches
             </Link>

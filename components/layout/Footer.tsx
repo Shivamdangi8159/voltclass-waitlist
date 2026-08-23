@@ -9,9 +9,8 @@ export const Footer = () => {
           {/* Brand Info */}
           <div className="col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#1D4ED8] flex items-center justify-center text-black font-extrabold text-xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
-                ⚡
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="VoltClass" className="w-9 h-9 rounded-xl object-contain" />
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight text-[#0B0F14]">
                   Volt<span className="text-[#2563EB]">Class</span>

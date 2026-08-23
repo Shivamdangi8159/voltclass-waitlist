@@ -12,22 +12,18 @@ export default function CoursesIndexPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const filteredCourses = COURSES_DATA.filter((course) => {
-    const matchesExam =
-      selectedExam === 'All' ||
-      (selectedExam === 'NEET' && course.exam === 'NEET') ||
-      (selectedExam === 'JEE Main' && course.exam === 'JEE Main') ||
-      (selectedExam === 'JEE Advanced' && course.exam === 'JEE Advanced');
+    const matchesExam = selectedExam === 'All' || course.exam === selectedExam;
 
     const matchesSearch =
       course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      course.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      course.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.subject.some((s) => s.toLowerCase().includes(searchQuery.toLowerCase()));
 
     return matchesExam && matchesSearch;
   });
 
   return (
-    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-black">
+    <div className="min-h-screen bg-white text-[#0B0F14] font-sans selection:bg-[#2563EB] selection:text-white">
       <Navbar />
 
       <main className="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,13 +57,13 @@ export default function CoursesIndexPage() {
 
           {/* Category Filter Buttons */}
           <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0">
-            {['All', 'NEET', 'JEE Main', 'JEE Advanced'].map((category) => (
+            {['All', 'NEET', 'JEE'].map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedExam(category)}
                 className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
                   selectedExam === category
-                    ? 'bg-[#2563EB] text-[#07090C] border-[#2563EB] shadow-[0_0_15px_rgba(37,99,235,0.3)]'
+                    ? 'bg-[#2563EB] text-white border-[#2563EB] shadow-[0_0_15px_rgba(37,99,235,0.3)]'
                     : 'bg-white text-[#5B6472] border-black/10 hover:text-[#0B0F14] hover:border-black/10'
                 }`}
               >
@@ -97,7 +93,7 @@ export default function CoursesIndexPage() {
                 setSelectedExam('All');
                 setSearchQuery('');
               }}
-              className="bg-[#2563EB] text-[#07090C] text-xs font-bold px-5 py-2.5 rounded-xl hover:bg-[#3B82F6] transition-all"
+              className="bg-[#2563EB] text-white text-xs font-bold px-5 py-2.5 rounded-xl hover:bg-[#3B82F6] transition-all"
             >
               Reset Filters
             </button>
