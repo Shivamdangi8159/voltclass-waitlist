@@ -145,7 +145,7 @@ export default function LandingPage() {
 
           <div className="relative max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] px-4 py-1.5 rounded-full text-xs font-bold mb-6">
-              <Zap className="w-3.5 h-3.5" /> Smartest Rank Booster Practice Engine 
+              <Zap className="w-3.5 h-3.5" /> Smart Rank Booster Practice Engine 
             </span>
 
             <h1 className="font-black tracking-tight leading-[1.05] text-4xl sm:text-6xl mb-6 text-[#0B0F14]">
@@ -157,9 +157,8 @@ export default function LandingPage() {
             </h1>
 
             <p className="text-[#5B6472] text-base leading-relaxed max-w-xl mx-auto mb-9">
-              A pure practice engine that plugs into whatever prep you&apos;re already doing —
-              a custom DIY exercise builder, 3D smart flashcards, live speed tracking and an AI
-              doubt-resolution assistant that never sleeps.
+              A performance-focused practice engine for NEET & JEE aspirants — 
+              with personalized practice, smart revision, testing, deep analytics and 30+ powerful learning tools.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-16">
