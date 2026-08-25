@@ -71,8 +71,8 @@ const appFeatures = [
   },
   {
     icon: <Sparkles className="w-5 h-5" />,
-    title: 'Smart Revision Engine',
-    desc: 'Weak areas are tracked automatically and reorganised into focused revision sets — no manual bookkeeping.',
+    title: 'And many more 30+ tools',
+    desc: 'VoltClass adds intelligent practice, testing, revision and performance analytics to help you improve where it matters.',
   },
 ];
 
